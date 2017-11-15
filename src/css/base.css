@@ -1,0 +1,10 @@
+ul {
+	list-style: none;
+}
+a {
+	text-decoration: none;
+}
+body {
+	color: #f00;
+	height: 30px;
+}
