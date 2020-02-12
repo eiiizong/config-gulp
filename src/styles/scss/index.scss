@@ -1,0 +1,44 @@
+// 公用样式
+
+
+.echarts-bar-box {
+	// background-color: #eee;
+	margin-top: 40px;
+	border: solid 1px rgba(12, 60, 200, 0.6);
+	.bar {
+		width: 100%;
+		height: 266px;
+	}
+}
+.echarts-donut-box {
+	width: 800px;
+	height: 162px;
+	background-color: #fff;
+	.donut {
+		min-width: 800px;
+		height: 162px;
+	}
+}
+.circular-progress-bar-box {
+	margin-top: 20px;
+	width: 200px;
+	height: 200px;
+	background-color: #eee;
+	.circular-progress-bar {
+		width: 100%;
+		height: 100%;
+		border: 20px solid #103278;
+		border-radius: 50%;
+		position: relative;
+		overflow: hidden;
+		background-color: #f0f;
+		.value {
+			font-size: 30px;
+			color: #fff;
+			text-align: center;
+			margin: auto;
+			line-height: 160px;
+		}
+	}
+}
+

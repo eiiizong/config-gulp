@@ -1,0 +1,430 @@
+/*! 通用样式 */
+@font-face {
+	font-family: myNumber;
+	src: url('../fonts/LetsgoDigital-Regular.ttf');
+}
+.my-number {
+	font-family: myNumber;
+}
+// 最外层盒子
+.screen-box {
+	width: 100%;
+	// transform: translateY();
+	height: 100%;
+	background: url(../images/bg.png) no-repeat center center #0a215a;
+	background-size: 100%;
+	position: relative;
+}
+// 装饰
+.decorate {
+	position: relative;
+	border: solid 1px #0a3096;
+	&:before,
+	&::after {
+		content: '';
+		width: 12px;
+		height: 14px;
+		position: absolute;
+		bottom: -2px;
+		background-repeat: no-repeat;
+		background-position: center center;
+		background-size: 100%;
+	}
+	&:before {
+		left: -1px;
+		background-image: url(../images/decorate-bottom-left.png);
+	}
+	&::after {
+		right: -1px;
+		background-image: url(../images/decorate-bottom-right.png);
+	}
+}
+// 盒子 拉开间距
+.wrapper-box {
+	padding: 0 28px 0 22px;
+}
+// 通用 一级标题
+.inner-title {
+	display: block;
+	line-height: 1;
+	font-size: 18px;
+	font-weight: 500;
+	color: #eee;
+	padding: 20px 0 14px;
+	border-bottom: 1px solid #0b3376;
+	position: relative;
+	&:before,
+	&::after {
+		content: '';
+		width: 9px;
+		height: 3px;
+		position: absolute;
+		bottom: -2px;
+		background-color: #139eff;
+		border-top: 1px solid #09356d;
+		border-bottom: 1px solid #09356d;
+	}
+	&:before {
+		left: 0;
+	}
+	&::after {
+		right: 0;
+	}
+	.right {
+		font-size: 14px;
+		line-height: 1;
+		color: #8deeff;
+		b {
+			font-weight: 500;
+			font-size: 22px;
+			color: #82eaff;
+		}
+		p {
+			&:last-child {
+				margin-left: 30px;
+				b {
+					color: #ff6565;
+				}
+			}
+		}
+	}
+}
+// 直线进度条动画
+@keyframes linearProgressBar {
+	0% {
+		width: 0;
+	}
+	100% {
+		width: 100%;
+	}
+}
+// 直线进度条
+.linear-progress-bar-box {
+	width: 100%;
+	height: 8px;
+	background-color: transparent;
+	margin-top: 8px;
+	.linear-progress-bar {
+		width: 100%;
+		height: 100%;
+		position: relative;
+		background-color: #0a215a;
+		.bg {
+			// 通过控制该宽度控制进度条的宽度
+			width: 80%;
+			height: 100%;
+			position: relative;
+			background-color: transparent;
+			position: absolute;
+			left: 0;
+			top: 0;
+			z-index: 222;
+			&::after {
+				position: absolute;
+				content: '';
+				height: 100%;
+				width: 100%;
+				left: 0;
+				top: 0;
+				background: linear-gradient(to right, #3d4fff, #22d3ff);
+				animation: linearProgressBar 4s ease-in-out;
+				z-index: 223;
+			}
+		}
+	}
+}
+// 顶部标题
+.top-title {
+	height: 80px;
+	background-color: #031f78;
+	// opacity: 0.4;
+	position: relative;
+	.select {
+		position: absolute;
+		left: 28px;
+		top: 50%;
+		z-index: 999;
+		transform: translateY(-50%);
+	}
+	.el-select {
+		width: 110px;
+		height: 37px;
+		padding: 0;
+		left: 0;
+		background-color: #ccc;
+		border-radius: 0;
+
+		.el-input {
+			border-radius: 0;
+			input {
+				text-align: center;
+				width: 110px;
+				height: 37px;
+				background-color: #0048a7;
+				border: solid 1px #003a99;
+				font-size: 16px;
+				padding: 0;
+				font-weight: 700;
+				line-height: 35px;
+				letter-spacing: 0px;
+				color: #139eff;
+				border-radius: 0;
+				padding-right: 16px;
+			}
+			.el-input__suffix {
+				position: absolute;
+				transform: rotate(180deg);
+				right: 10px;
+			}
+			i {
+				color: #139eff;
+				width: 11px;
+				height: 9px;
+				background: url(../images/icon-selected.png) no-repeat center center;
+				background-size: 100%;
+				margin: 14px 0 0 0;
+
+				&::before {
+					content: '';
+				}
+			}
+		}
+	}
+	h2 {
+		text-align: center;
+		position: relative;
+		span {
+			display: inline-block;
+			position: relative;
+			font-weight: 700;
+			font-size: 40px;
+			line-height: 80px;
+			color: #bef4ff;
+			&::before,
+			&::after {
+				content: '';
+				position: absolute;
+				width: 271px;
+				height: 15px;
+				top: 50%;
+				background: url(../images/top-title-left.png) no-repeat center center;
+				background-size: 100%;
+				vertical-align: middle;
+				margin-top: -8px;
+			}
+			&::before {
+				// 271 + 12
+				left: -283px;
+			}
+			&::after {
+				right: -283px;
+				background-image: url(../images/top-title-right.png);
+			}
+		}
+	}
+	.time {
+		position: absolute;
+		top: 0;
+		right: 46px;
+		font-size: 16px;
+		font-weight: 400;
+		line-height: 80px;
+		color: #82eaff;
+		opacity: 0.7;
+	}
+}
+
+.two-row {
+	width: 350px;
+	height: 117px;
+	background-color: transparent;
+	border: solid 1px rgba(12, 60, 200, 0.6);
+	color: #fff;
+	font-size: 16px;
+	line-height: 1;
+	background-color: #00195f48;
+	position: relative;
+	&.active {
+		background-color: #001a5f;
+		border: solid 1px #0066ff;
+		.icon {
+			display: block;
+			opacity: 1;
+		}
+	}
+	.title-wrapper {
+		padding: 0 14px 0 10px;
+		.title {
+			border-bottom: 1px solid rgba(20, 109, 227, 0.3);
+			height: 52px;
+			padding: 0 9px 0 11px;
+			.left {
+				p {
+					font-size: 20px;
+					font-weight: 700;
+					line-height: 1;
+					color: #fff;
+				}
+				span {
+					font-size: 12px;
+					font-weight: 400;
+					line-height: 1;
+					color: #fff;
+					padding-left: 12px;
+				}
+			}
+			.right {
+				p {
+					font-size: 14px;
+					font-weight: 400;
+					line-height: 1;
+					color: #82eaff;
+				}
+				span {
+					font-size: 20px;
+					font-weight: 700;
+					line-height: 1;
+					color: #00ffea;
+				}
+			}
+		}
+	}
+
+	.row-border {
+		padding-top: 15px;
+		.left {
+			width: 50%;
+			border-right: 1px solid #0c3cc8;
+			padding-left: 34px;
+		}
+		.right {
+			width: 50%;
+			padding-left: 30px;
+		}
+		.name {
+			padding-top: 3px;
+			margin-bottom: 13px;
+			opacity: 0.5;
+		}
+		p {
+			font-size: 24px;
+			line-height: 1;
+			color: #e88d1c;
+			font-weight: 700;
+		}
+	}
+
+	.unit {
+		font-size: 12px;
+		font-weight: 400;
+		line-height: 1;
+		color: #fff;
+		padding-left: 6px;
+		position: relative;
+		top: -2px;
+		opacity: 0.5;
+	}
+	.icon {
+		display: none;
+		opacity: 0;
+		width: 20px;
+		height: 10px;
+		position: absolute;
+		left: 50%;
+		margin-left: -10px;
+		bottom: -16px;
+		background: url(../images/icon-arrow-down-active.png) no-repeat center
+			center;
+		background-size: 100%;
+	}
+}
+
+// 第二种直线进度条
+.set-linear-progress-bar-two {
+	width: 100%;
+	height: 14px;
+	position: relative;
+	.bit {
+		width: 5px;
+		height: 100%;
+		background-color: #1479fd;
+		border: solid 1px #139eff;
+		margin-right: 2px;
+		&:last-child {
+			margin-right: 0;
+		}
+	}
+	.bg {
+		width: 100%;
+		height: 100%;
+		background-color: #071a49;
+		.bit {
+			background-color: #bf7649;
+			border: solid 1px #c14e2f;
+		}
+	}
+	.current {
+		background-color: #071a49;
+		width: 0%;
+		height: 100%;
+		position: absolute;
+		top: 0;
+		left: 0;
+		transition: all 0.5s;
+	}
+}
+// table 无缝滚动
+.table-scroll-wrapper {
+	width: 100%;
+	overflow: hidden;
+	table {
+		display: block;
+		width: 100%;
+		font-size: 12px;
+		font-weight: 400;
+		line-height: 32px;
+		color: #fff;
+		text-align: center;
+		padding-top: 15px;
+		height: 656px;
+		position: relative;
+	}
+	.table-thead {
+		padding-top: 15px;
+		height: auto;
+	}
+	.table-tbody {
+		margin-top: 0;
+		overflow: hidden;
+	}
+	tr,
+	thead,
+	tbody {
+		display: block;
+		width: 100%;
+	}
+	tr {
+		background-color: #01174f;
+		border: solid 1px #0c3cc8;
+		margin-bottom: 7px;
+		display: flex;
+	}
+	thead {
+		tr {
+			background-color: #023998;
+			border: solid 1px #0c3cc8;
+		}
+	}
+	tbody {
+		position: absolute;
+		top: 0;
+		left: 0;
+	}
+	th,
+	td {
+		width: 10%;
+		&:first-child {
+			width: 12%;
+		}
+	}
+}

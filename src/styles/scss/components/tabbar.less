@@ -1,0 +1,35 @@
+.tabbar {
+  display: block;
+  width: 100%;
+  border-top: 1px solid #ddd;
+  padding-top: @16px;
+  padding-bottom: @10px;
+  background-color: #fff;
+  li {
+    width: 25%;
+    text-align: center;
+    font-size: 0;
+    &.active {
+      p {
+        color: #1c8eff;
+      }
+      .icon-home {
+        background-image: url(../images/tabbar/home-active.png);
+      }
+      .icon-news {
+        background-image: url(../images/tabbar/news-active.png);
+      }
+      .icon-serve {
+        background-image: url(../images/tabbar/serve-active.png);
+      }
+      .icon-my {
+        background-image: url(../images/tabbar/my-active.png);
+      }
+    }
+  }
+  p {
+    font-size: @20px;
+    color: #999;
+    padding-top: @10px;
+  }
+}

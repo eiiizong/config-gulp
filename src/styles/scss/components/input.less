@@ -1,0 +1,113 @@
+/*! input css */
+input[type="checkbox"],
+input[type="file"],
+input[type="radio"] {
+  display: none;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+select {
+  /*将默认的select选择框样式清除*/
+  appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+}
+/*IE浏览器隐藏下拉箭头*/
+select::-ms-expand {
+  display: none;
+}
+
+textarea {
+  resize: none;
+  outline: 0;
+  -webkit-appearance: none;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+// placeholder 样式控制
+input::-webkit-input-placeholder {
+  color: #999;
+}
+
+// 去除或定义search输入框输入时的小×
+input[type="search"]::-webkit-search-cancel-button {
+  -webkit-appearance: none; //此处只是去掉默认的小×
+  // 重新定义小×
+  position: relative;
+  height: @30px;
+  width: @42px;
+  padding: 0 @6px;
+  border-radius: 50%;
+  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAACXBIWXMAAAsTAAALEwEAmpwYAAAF62lUWHRYTUw6Y29tLmFkb2JlLnhtcAAAAAAAPD94cGFja2V0IGJlZ2luPSLvu78iIGlkPSJXNU0wTXBDZWhpSHpyZVN6TlRjemtjOWQiPz4gPHg6eG1wbWV0YSB4bWxuczp4PSJhZG9iZTpuczptZXRhLyIgeDp4bXB0az0iQWRvYmUgWE1QIENvcmUgNS42LWMxNDIgNzkuMTYwOTI0LCAyMDE3LzA3LzEzLTAxOjA2OjM5ICAgICAgICAiPiA8cmRmOlJERiB4bWxuczpyZGY9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkvMDIvMjItcmRmLXN5bnRheC1ucyMiPiA8cmRmOkRlc2NyaXB0aW9uIHJkZjphYm91dD0iIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtbG5zOnhtcE1NPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvbW0vIiB4bWxuczpzdEV2dD0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL3NUeXBlL1Jlc291cmNlRXZlbnQjIiB4bWxuczpkYz0iaHR0cDovL3B1cmwub3JnL2RjL2VsZW1lbnRzLzEuMS8iIHhtbG5zOnBob3Rvc2hvcD0iaHR0cDovL25zLmFkb2JlLmNvbS9waG90b3Nob3AvMS4wLyIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ0MgKFdpbmRvd3MpIiB4bXA6Q3JlYXRlRGF0ZT0iMjAxOS0xMS0wMlQyMToxOToxOSswODowMCIgeG1wOk1ldGFkYXRhRGF0ZT0iMjAxOS0xMS0wMlQyMToxOToxOSswODowMCIgeG1wOk1vZGlmeURhdGU9IjIwMTktMTEtMDJUMjE6MTk6MTkrMDg6MDAiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6YzhhNzExMDQtMjIwYS1mNTRhLWI1MjQtOGI3ZmFjNDY4MjExIiB4bXBNTTpEb2N1bWVudElEPSJhZG9iZTpkb2NpZDpwaG90b3Nob3A6N2M5NGRkYzMtODM4ZC1lNjRiLTk2MjMtYWZmMGY0ZDUxMjY1IiB4bXBNTTpPcmlnaW5hbERvY3VtZW50SUQ9InhtcC5kaWQ6OWZmMmM5MzQtZTA1ZS1jMzQ1LWFhNDItNjdjYmJlMTMxNGI5IiBkYzpmb3JtYXQ9ImltYWdlL3BuZyIgcGhvdG9zaG9wOkNvbG9yTW9kZT0iMyIgcGhvdG9zaG9wOklDQ1Byb2ZpbGU9InNSR0IgSUVDNjE5NjYtMi4xIj4gPHhtcE1NOkhpc3Rvcnk+IDxyZGY6U2VxPiA8cmRmOmxpIHN0RXZ0OmFjdGlvbj0iY3JlYXRlZCIgc3RFdnQ6aW5zdGFuY2VJRD0ieG1wLmlpZDo5ZmYyYzkzNC1lMDVlLWMzNDUtYWE0Mi02N2NiYmUxMzE0YjkiIHN0RXZ0OndoZW49IjIwMTktMTEtMDJUMjE6MTk6MTkrMDg6MDAiIHN0RXZ0OnNvZnR3YXJlQWdlbnQ9IkFkb2JlIFBob3Rvc2hvcCBDQyAoV2luZG93cykiLz4gPHJkZjpsaSBzdEV2dDphY3Rpb249InNhdmVkIiBzdEV2dDppbnN0YW5jZUlEPSJ4bXAuaWlkOmM4YTcxMTA0LTIyMGEtZjU0YS1iNTI0LThiN2ZhYzQ2ODIxMSIgc3RFdnQ6d2hlbj0iMjAxOS0xMS0wMlQyMToxOToxOSswODowMCIgc3RFdnQ6c29mdHdhcmVBZ2VudD0iQWRvYmUgUGhvdG9zaG9wIENDIChXaW5kb3dzKSIgc3RFdnQ6Y2hhbmdlZD0iLyIvPiA8L3JkZjpTZXE+IDwveG1wTU06SGlzdG9yeT4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz4Qvcz3AAABrUlEQVRYw82XsU7DMBCGPRapnZHoBmWHrgw8RngKJt6gSCTlBdq0EwtPUJa8QJkgA1Er8QA0WQuiWeAOnSXLJORspynDt0Rn/3/du7NPRFEkmLQBDxgBc2AFfBIr+jaimDZ3X07QITAB1sAXkzWtOXIx0AJ8YGMgrLOhPVqmBtD5k4OwDu7V4xo4Ad5qFJfgnqdVBtBlugVxSaqfhCq+V/Oxl/FMWr8M+A2IS3zdACZd3qCBXJaoNDCpWIDN5hZYMAXugIeKmKk00GE0mYSM7gMvFbEDij1nNKuOoNbJ+VUBw4QUPwCWjD09DA4N/ru/TJiKI6GgS8QkgYYFJq4txJE5Lsosslg1cWkpjmTC4bIZKj2kayH+c1m5GBgoBjjVUWogcxDHY79yMJHZJKEqviiojsQ0CUNH8aLETEzK0LMQXzKqI+E2Ik4rjg1KTZo447Zi7mV0A7wyT+semHEvo39xHQvK5KYMBGVPsniXT7KdP0ol/S0+y/vcwaRX898Rmwwm6mgW1DCaBTajmX4a2CfeDYQ/aM1xHdOxOp5fAGPgkRIqJ1L6NqYY9nj+DcTSqe/SYsCHAAAAAElFTkSuQmCC)
+    no-repeat center center;
+  background-size: @30px @30px;
+}
+
+input {
+  display: inline-block;
+  width: 100%;
+  font-size: @32px;
+  line-height: 1.4em;
+  background-color: transparent;
+  border: 0;
+  outline: 0;
+  border-radius: 0;
+  color: #333;
+  padding: 0;
+}
+
+// html input-box
+.input-wrapper {
+  padding: 0 @30px;
+  .input-box {
+    height: @100px;
+    border-bottom: 1px solid #ddd;
+  }
+  .left {
+    min-width: @200px;
+    color: #333;
+    font-size: @28px;
+  }
+  .right {
+  }
+  input {
+    font-size: @28px;
+    line-height: 1.4;
+    text-align: right;
+    color: #999;
+  }
+  select {
+    font-size: @28px;
+    line-height: 1.4;
+    text-align: right;
+    color: #999;
+  }
+}
+// switch
+.icon-switch {
+  width: @76px;
+  height: @40px;
+  background-color: #ddd;
+  border-radius: 99em;
+  position: relative;
+  transition: all 0.3s;
+  &::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: @4px;
+    background-color: #fff;
+    width: @34px;
+    height: @34px;
+    border-radius: 50%;
+    transform: translateY(-50%);
+    transition: all 0.3s;
+  }
+}

@@ -1,20 +1,19 @@
-## gulp-demmo
+## 说明
+该工具 sass + gulp
 
-`gulp-demmo` 文件中其中包含了一下配置，用 less 编译css、热更新等
+运行文件预览需确保已安装 `node` 环境：
 
-下载项目
+执行步骤如下：
 
-    git clone https://github.com/eiiizong/gulp.git
++ 在本目录下打开**CMD终端**
 
-进入项目目录
++ 在终端输入 `npm install`  或者 `yarn` 安装依赖文件
 
-    cd gulp-demmo
++ 在终端输入 `npm run dev ` 或者 `yarn dev` 编译文件 ，将会**生成**一个 `dist` 文件夹 
 
-安装依赖包
++ 打开浏览器输入 [http://localhost:8003]: http://localhost:8003 预览
 
-    npm install
++ 在终端输入 `npm run del ` 或者 `yarn del` 编译文件 ，将会**删除** `dist` 文件夹
 
-运行项目
 
-    npm run dev
-
+**也可解压dist.zip文件进行预览**

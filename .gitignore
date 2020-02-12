@@ -1,3 +1,5 @@
-gulp-demo/node_modules
-gulp-demo/dist
-gulp-demo/package-lock.json
+node_modules
+dist.zip
+dist
+package-lock.json
+yarn.lock
