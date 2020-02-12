@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<!-- 通过 flexible 将html标签上设置字体大小 -->
 <html lang="en">
 
 <head>
@@ -20,23 +21,24 @@
   <!-- 引入样式 -->
   <link rel="stylesheet" href="./lib/normalize/normalize.css" />
   <link rel="stylesheet" href="./lib/animate.css/animate.min.css" />
+
+  <!-- 最终生成编译的css -->
   <link rel="stylesheet" href="./css/style.min.css" />
+  <script src="./lib/flexible/flexible.js"></script>
+  
 </head>
 
 <body>
   <div class="app" id="app">
     test
   </div>
-  <!-- 引入组件 js文件 -->
-  <script src="./lib/vue/dist/vue.min.js"></script>
-  <script src="./lib/jquery/jquery.min.js"></script>
-  <script src="./lib/echarts/echarts.min.js"></script>
-  <script src="./lib/element-ui/lib/index.js"></script>
-  <script src="./js/animated.js"></script>
-
-  <script src="./js/linear-progress-bar-two.js"></script>
-  <script src="./js/grqy-main.js"></script>
-
 </body>
+<!-- 引入 js 文件 -->
+<script src="./lib/jquery/jquery.min.js"></script>
+<script>
+  $(function () {
+    console.log('代码加载完毕!');
+  });
+</script>
 
 </html>
