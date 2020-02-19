@@ -1,3 +1,8 @@
 /*! 通用样式 */
-
+.app {
+    display: flex;
+    flex-direction: column;
+    background-color: #f8f8f8;
+    min-height: 100%;
+}
 

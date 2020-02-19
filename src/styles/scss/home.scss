@@ -1,0 +1,66 @@
+/*! 首页样式 */
+.home {
+	.header {
+		position: relative;
+		.bg {
+			width: 100%;
+			height: $scss_524px;
+			@include bg-image('home/bg');
+		}
+		.name {
+			position: absolute;
+			left: 50%;
+			transform: translateX(-50%);
+			width: $scss_516px;
+			top: $scss_102px;
+			height: $scss_60px;
+			@include bg-image('home/name');
+		}
+	}
+	.nav {
+		padding: $scss_8px $scss_40px;
+		a {
+			color: #333;
+			font-size: $scss_44px;
+			line-height: 1;
+			margin-top: $scss_40px;
+			background-color: #fff;
+			border: 1px solid #ddd;
+			padding: $scss_34px $scss_40px;
+			border-radius: $scss_10px;
+			position: relative;
+		}
+		.left {
+			margin-right: $scss_30px;
+		}
+		p {
+			font-weight: 700;
+		}
+		span {
+			display: block;
+			font-size: $scss_32px;
+			line-height: 1;
+			color: #999;
+			margin-top: $scss_16px;
+		}
+	}
+	.icon-zxwz {
+		width: $scss_136px;
+		height: $scss_136px;
+		@include bg-image('home/icon-zxwz');
+	}
+	.icon-wdwz {
+		width: $scss_136px;
+		height: $scss_136px;
+		@include bg-image('home/icon-wdwz');
+	}
+	.icon-arrow-right {
+		position: absolute;
+		top: 50%;
+		right: $scss_32px;
+		width: $scss_32px;
+		height: $scss_32px;
+		transform: translateY(-50%);
+		@include bg-image('home/icon-arrow-right');
+	}
+}

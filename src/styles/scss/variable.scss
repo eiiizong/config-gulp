@@ -1,7 +1,11 @@
 
-// @import "./components/px-to-rem.less";
-
+@import "./components/px-to-rem.scss";
 @import "./components/common.scss";
+@import "./components/icon.scss";
+@import "./components/button.scss";
+@import "./components/flex.scss";
+
+@import "./mixins/background-image.scss";
 
 
 // 全局变量 声明

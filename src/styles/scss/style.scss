@@ -1,9 +1,10 @@
+// 此页面引入 各页面样式 进行样式合并
 @import "./variable.scss";
-@import "./components/flex.scss";
-// @import "./index.scss";
+
+// 通用样式
 @import "./common.scss";
-@import "./jkjk.scss";
-@import "./fwtjjk.scss";
-@import "./ryzy.scss";
-@import "./jw.scss";
-@import "./grqy.scss";
+
+// 首页
+@import "./home.scss";
+// 医生列表
+@import "./doctor-list.scss";
