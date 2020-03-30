@@ -1,3 +1,14 @@
 /*! 首页样式 */
 .home {
+    .text-1 {
+        width: 400px;
+        @include textOverflow;
+    }
+    .text-2 {
+        width: 400px;
+        height: 200px;
+        overflow: auto;
+        // @include textOverflow('3');
+        @include scrollbar(1px,2px,#f00,#fff);
+    }
 }

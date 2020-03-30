@@ -4,9 +4,10 @@
 @import "./mixins/noselect.scss";
 @import "./mixins/background-image.scss";
 @import "./mixins/scrollbar.scss";
+@import "./mixins/text-overflow.scss";
 
 // 全局变量 声明
-$body-bgc: #f00;
+$body-bgc: #f8f8f8;
 
 
 // button 按钮
@@ -19,5 +20,7 @@ $input-placeholder-color: #f00;
 $input-color: #333;
 
 // scrollbar 滚动条
+$scrollbar-width: 8px;
+$scrollbar-height: 1px;
 $scrollbar-thumb-bgc: #dae7ff ;
 $scrollbar-track-bgc: #fff;
