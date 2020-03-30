@@ -12,6 +12,9 @@ const delhtml = () => del(['dist/*.html']);
 const delcss = () => del(['dist/css/']);
 
 const delall = () => del(['dist']);
+const delImg = () => del(['dist/images']);
+const delJs = () => del(['dist/js']);
+const delLib = () => del(['dist/lib']);
 const delCss = () => del(['dist/css']);
 // const delall = () => del(['dist']);
 
@@ -52,10 +55,10 @@ const copy = parallel(copyimg, copyhtml, copycss, copyjs, copyfont, copylib);
 // 检测文件
 watch(['./src/*.html'], series(copyhtml, reload));
 watch(['./src/styles/css/*.css'], series(delCss,copycss, reload));
-watch(['./src/lib/**/*'], series(copylib, reload));
+watch(['./src/lib/**/*'], series(delLib,copylib, reload));
 watch(['./src/styles/scss/**/*'], series(delCss,scss, reload));
-watch(['./src/js/*.js'], series(copyjs, reload));
-watch(['./src/images/**/*'], series(copyimg, reload));
+watch(['./src/js/*.js'], series(delJs,copyjs, reload));
+watch(['./src/images/**/*'], series(delImg,copyimg, reload));
 
 exports.scss = scss;
 exports.delall = delall;
