@@ -3,7 +3,7 @@
 
 @import "./mixins/noselect.scss";
 @import "./mixins/background-image.scss";
-
+@import "./mixins/scrollbar.scss";
 
 // 全局变量 声明
 $body-bgc: #f00;
@@ -17,3 +17,7 @@ $btn-color: #333;
 $input-font-size: 15px;
 $input-placeholder-color: #f00;
 $input-color: #333;
+
+// scrollbar 滚动条
+$scrollbar-thumb-bgc: #dae7ff ;
+$scrollbar-track-bgc: #fff;
