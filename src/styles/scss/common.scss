@@ -1,8 +1,12 @@
 /*! 通用样式 */
+html {
+    overflow-x: hidden;
+}
+
 .app {
     display: flex;
     flex-direction: column;
-    background-color: #f8f8f8;
+    background-color: $body-bgc;
     min-height: 100%;
 }
 

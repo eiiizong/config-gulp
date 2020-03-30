@@ -33,6 +33,7 @@ const scss = () => {
         cascade: false
       })
     )
+    .pipe(dest('./dist/css'))
     .pipe(cssnano())
     .pipe(rename('index.min.css'))
     .pipe(sourcemaps.write('./'))

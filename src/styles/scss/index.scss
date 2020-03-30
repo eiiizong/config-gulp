@@ -1,10 +1,23 @@
-/* 此页面引入 各页面样式 进行样式合并*/
+// 此页面引入 各页面样式 进行样式合并
+
+// 全局控制变量
 @import "./variable.scss";
+
+
+@import "./components/reset.scss";
+
+@import "./components/button.scss";
+
+@import "./components/icon.scss";
+
+@import "./components/flex.scss";
+
+@import "./components/input.scss";
+
+@import "./components/clearfix.scss";
 
 // 通用样式
 @import "./common.scss";
 
-// 首页
 @import "./home.scss";
-// 医生列表
-@import "./doctor-list.scss";
+

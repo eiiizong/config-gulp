@@ -1,13 +1,18 @@
 
-@import "./components/px-to-rem.scss";
-@import "./components/common.scss";
-@import "./components/icon.scss";
-@import "./components/button.scss";
-@import "./components/flex.scss";
+@import "./mixins/px-to-rem.scss";
 
 @import "./mixins/background-image.scss";
 
 
 // 全局变量 声明
-// $padding-LR: $_30px;
-$themeColor: #f00;
+$body-bgc: #f00;
+
+
+// button 按钮
+$btn-font-size: 15px;
+$btn-color: #333;
+
+// input 输入框
+$input-font-size: 15px;
+$input-placeholder-color: #f00;
+$input-color: #333;

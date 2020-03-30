@@ -1,12 +1,11 @@
 // icon
 i {
   font-style: normal;
+  .icon {
+    display: inline-block;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-position: center center;
+    vertical-align: top;
+  }
 }
-i.icon {
-  display: inline-block;
-  background-size: 100% 100%;
-  background-repeat: no-repeat;
-  background-position: center center;
-  vertical-align: top;
-}
-
