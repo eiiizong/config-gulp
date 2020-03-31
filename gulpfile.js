@@ -5,6 +5,7 @@ const { src, dest, parallel, series, watch } = require('gulp'),
   cssnano = require('gulp-cssnano'),
   rename = require('gulp-rename'),
   autoprefixer = require('gulp-autoprefixer'),
+  babel = require('gulp-babel'),
   gulpSass = require('gulp-sass');
 
 gulpSass.compiler = require('node-sass');
@@ -43,6 +44,11 @@ const scss = () => {
     .pipe(dest('./dist/css'));
 };
 
+const compileJS = () =>
+  src('./src/js/*.js')
+    .pipe(babel())
+    .pipe(dest('./dist/js'));
+
 const reload = () => src('./dist/*.html').pipe(connect.reload());
 const copyjs = () => src('./src/js/*.js').pipe(dest('./dist/js'));
 const copyhtml = () => src('./src/*.html').pipe(dest('./dist/'));
@@ -51,15 +57,15 @@ const copyimg = () => src('./src/images/**/*').pipe(dest('./dist/images/'));
 const copylib = () => src('./src/lib/**/*').pipe(dest('./dist/lib/'));
 const copyfont = () => src('./src/fonts/*.ttf').pipe(dest('./dist/fonts/'));
 
-const copy = parallel(copyimg, copyhtml, copycss, copyjs, copyfont, copylib);
+const copy = parallel(copyimg, copyhtml, copycss, copyfont, copylib);
 // 检测文件
 watch(['./src/*.html'], series(copyhtml, reload));
-watch(['./src/styles/css/*.css'], series(delCss,copycss, reload));
-watch(['./src/lib/**/*'], series(delLib,copylib, reload));
-watch(['./src/styles/scss/**/*'], series(delCss,scss, reload));
-watch(['./src/js/*.js'], series(delJs,copyjs, reload));
-watch(['./src/images/**/*'], series(delImg,copyimg, reload));
+watch(['./src/styles/css/*.css'], series(delCss, copycss, reload));
+watch(['./src/lib/**/*'], series(delLib, copylib, reload));
+watch(['./src/styles/scss/**/*'], series(delCss, scss, reload));
+watch(['./src/js/*.js'], series(delJs, compileJS, reload));
+watch(['./src/images/**/*'], series(delImg, copyimg, reload));
 
 exports.scss = scss;
 exports.delall = delall;
-exports.dev = series(delall,copy, scss, server);
+exports.dev = series(delall, copy, scss, compileJS, server);

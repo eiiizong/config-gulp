@@ -14,7 +14,11 @@
     }
   } @else {
     // 错误提示
-    content: 'We expect you to pass in a Number, but you passed in a ' +
+    &::after {
+      content: 'We expect you to pass in a Number, but you passed in a ' +
       type-of($rows);
+      color: #f00;
+    }
+    
   }
 }
