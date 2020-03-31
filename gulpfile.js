@@ -74,6 +74,17 @@ watch(['./src/styles/scss/**/*'], series(delCss, scss, reload));
 watch(['./src/js/*.js'], series(delJs, compileJS, reload));
 watch(['./src/images/**/*'], series(delImg, compressionimg, reload));
 
-exports.scss = scss;
+exports.css = scss;
+
 exports.delall = delall;
+exports.delImg = delImg;
+exports.delCss = delCss;
+exports.delLib = delLib;
+exports.delJs = delJs;
+
+exports.js = compileJS;
+exports.img = compressionimg;
+exports.server = server;
+
+exports.default = series(delall, copy, scss,compressionimg, compileJS, server);
 exports.dev = series(delall, copy, scss,compressionimg, compileJS, server);
