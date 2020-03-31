@@ -6,6 +6,7 @@ const { src, dest, parallel, series, watch } = require('gulp'),
   rename = require('gulp-rename'),
   autoprefixer = require('gulp-autoprefixer'),
   babel = require('gulp-babel'),
+  imagemin = require('gulp-imagemin'),
   gulpSass = require('gulp-sass');
 
 gulpSass.compiler = require('node-sass');
@@ -44,10 +45,17 @@ const scss = () => {
     .pipe(dest('./dist/css'));
 };
 
-const compileJS = () =>
-  src('./src/js/*.js')
+const compileJS = () => {
+  return src('./src/js/*.js')
     .pipe(babel())
     .pipe(dest('./dist/js'));
+};
+
+const compressionimg = () => {
+  return src('./src/images/*')
+    .pipe(imagemin())
+    .pipe(dest('./dist/images/'));
+};
 
 const reload = () => src('./dist/*.html').pipe(connect.reload());
 const copyjs = () => src('./src/js/*.js').pipe(dest('./dist/js'));
@@ -57,15 +65,15 @@ const copyimg = () => src('./src/images/**/*').pipe(dest('./dist/images/'));
 const copylib = () => src('./src/lib/**/*').pipe(dest('./dist/lib/'));
 const copyfont = () => src('./src/fonts/*.ttf').pipe(dest('./dist/fonts/'));
 
-const copy = parallel(copyimg, copyhtml, copycss, copyfont, copylib);
+const copy = parallel(copyhtml, copycss, copyfont, copylib);
 // 检测文件
 watch(['./src/*.html'], series(copyhtml, reload));
 watch(['./src/styles/css/*.css'], series(delCss, copycss, reload));
 watch(['./src/lib/**/*'], series(delLib, copylib, reload));
 watch(['./src/styles/scss/**/*'], series(delCss, scss, reload));
 watch(['./src/js/*.js'], series(delJs, compileJS, reload));
-watch(['./src/images/**/*'], series(delImg, copyimg, reload));
+watch(['./src/images/**/*'], series(delImg, compressionimg, reload));
 
 exports.scss = scss;
 exports.delall = delall;
-exports.dev = series(delall, copy, scss, compileJS, server);
+exports.dev = series(delall, copy, scss,compressionimg, compileJS, server);
