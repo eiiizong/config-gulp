@@ -1,0 +1,22 @@
+// 隐藏原生滚动条
+@mixin scrollbarHidden {
+  // chrome 和Safari
+  &::-webkit-scrollbar {
+    width: 0 !important;
+  }
+  // IE 10+
+  -ms-overflow-style: none;
+  // Firefox
+  overflow: -moz-scrollbars-none;
+
+  // 火狐 不能隐藏 利用技巧 => 内部容器宽度大于外部容器17px隐藏滚动条
+  .scroll-wrapper {
+    width: 200px;
+    overflow: hidden;
+    .inner {
+      width: 217px;
+      overflow-y: auto;
+      overflow-x: hidden;
+    }
+  }
+}

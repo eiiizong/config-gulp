@@ -9,6 +9,7 @@
         height: 300px;
         overflow: auto;
         // @include textOverflow('3');
-        @include scrollbar(1px,2px,#f00,#fff);
+        @include scrollbarHidden;
+        // @include scrollbar(1px,2px,#f00,#fff);
     }
 }
