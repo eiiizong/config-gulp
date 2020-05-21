@@ -1,7 +1,6 @@
 // 框架
 
 $(function () {
-  let requestData = {};
 
   const configStyle = styles => {
     if (styles) {
@@ -30,7 +29,12 @@ $(function () {
       }
     });
   };
-
+  /**
+   * 
+   * @param {String} componentId 组件id
+   * @param {String} funcName 函数名 [setData|getData|queryData]
+   * @param  {...any} rest 执行函数所带参数
+   */
   const dispatchEvent = (componentId, funcName, ...rest) => {
     runFunc(componentId, funcName, ...rest);
   };
@@ -39,18 +43,24 @@ $(function () {
   const check = componentId => {
     let isOk = true;
     if (componentId) {
-      isOk = runFunc(componentId, 'check');
+      isOk = runFunc(componentId, 'checkData');
+      if(!isOk) {
+        alert('校验失败')
+      }
       return isOk;
     }
 
-    requestData.components.map(item => {
+    configData.components.map(item => {
       if (item.form) {
-        const ok = runFunc(item.id, 'check');
+        const ok = runFunc(item.id, 'checkData');
         if (!ok) {
           isOk = false;
         }
       }
     });
+    if(!isOk) {
+      alert('校验失败')
+    }
     return isOk;
   };
 
@@ -60,7 +70,7 @@ $(function () {
 
   const getData = () => {
     var resultData = {};
-    requestData.components.map(item => {
+    configData.components.map(item => {
       if (item.form) {
         resultData[item.id] = runFunc(item.id, 'getData');
       }
@@ -68,7 +78,7 @@ $(function () {
     return resultData;
   };
 
-  const submit = url => {
+  const submit = () => {
     var isOk = check(); // 验证数据是否为空
 
     if (!isOk) {
@@ -78,12 +88,12 @@ $(function () {
     //  获取数据
     let resultData = getData();
 
-    $.post(url, JSON.stringify(resultData), result => {
+    $.post(configData.url, JSON.stringify(resultData), result => {
       console.log('提交数据成功', result);
     });
 
     // 组件内部提交
-    // requestData.components.map(item => {
+    // configData.components.map(item => {
     //   runFunc(item.id, 'submit');
     // });
   };
@@ -92,65 +102,23 @@ $(function () {
     runFunc(componentId, 'setData', ...rest);
   };
 
-  const main = (url, data) => {
-    requestData = {
-      style: '',
-      components: [
-        {
-          id: 'yhc01',
-          form: true,
-        },
-        {
-          id: 'yhc02',
-          form: false,
-        },
-        {
-          id: 'yhc03',
-          form: true,
-        },
-        {
-          id: 'yhc04',
-          form: true,
-        },
-        {
-          id: 'yhc05',
-          form: true,
-        },
-        {
-          id: 'yhc06',
-          form: false,
-        },
-        {
-          id: 'yhc07',
-          form: true,
-        },
-        {
-          id: 'yhc08',
-          form: false,
-        },
-        {
-          id: 'yhc09',
-          form: false,
-        },
-        {
-          id: 'yhc10',
-          form: false,
-        },
-      ],
-    };
-    configStyle(requestData.style);
-    ajaxRequest(url, data, res => {
-      // requestData = res
-      // configStyle(requestData.style);
+  const main = () => {
+    configStyle(configData.style);
+  };
+  const init = (...rest) => {
+    configData.components.map(item => {
+      if (item.form) {
+        resultData[item.id] = runFunc(item.id, 'initData', ...rest);
+      }
     });
   };
-
   window.TA505 = {
     submit,
     check,
     changeSize,
     ajaxRequest,
     main,
+    init,
     getData,
     initInputValue,
     dispatchEvent,
