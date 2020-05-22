@@ -39,6 +39,20 @@ $(function () {
     runFunc(componentId, funcName, ...rest);
   };
 
+  const postEvent = (obj) => {
+    if(!obj && !obj.id) {
+      return false
+    }
+
+    configData.components.map(item => {
+      if(item.id === obj.id) {
+        item.relationship.map(item2 => {
+          runFunc(item2.id, item2.eventName);
+        })
+      }
+    })
+  };
+
   // 检查 没有参数传递 检测全部 有参数传递检测该id为componentId的组件
   const check = componentId => {
     let isOk = true;
@@ -72,7 +86,9 @@ $(function () {
     var resultData = {};
     configData.components.map(item => {
       if (item.form) {
-        resultData[item.id] = runFunc(item.id, 'getData');
+        resultData[item.che050] = {};
+        resultData[item.che050].id = item.id;
+        resultData[item.che050].data = runFunc(item.id, 'getData');
       }
     });
     return resultData;
@@ -88,9 +104,18 @@ $(function () {
     //  获取数据
     let resultData = getData();
 
-    $.post(configData.url, JSON.stringify(resultData), result => {
-      console.log('提交数据成功', result);
-    });
+    // $.post(configData.url, resultData, result => {
+    //   console.log('提交数据成功', result);
+    // });
+    $.ajax({
+      url: configData.url,
+      type: 'POST',
+      data: JSON.stringify(resultData),
+      contentType: 'application/json',
+      success: function(res) {
+        console.log('提交成功', res)
+      }
+    })
 
     // 组件内部提交
     // configData.components.map(item => {
@@ -122,6 +147,7 @@ $(function () {
     getData,
     initInputValue,
     dispatchEvent,
+    postEvent
   };
 });
 
