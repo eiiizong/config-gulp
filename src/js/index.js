@@ -2,7 +2,7 @@
 
 (function () {
   // 所有组件注册过来的事件
-  let componentEvents = [];
+  let componentEvents = {};
 
   /**
    *
@@ -11,17 +11,11 @@
    * @param  {...any} rest 执行函数所带参数
    */
   const runFunc = (componentId, funcName, ...rest) => {
-    let target = {};
-    componentEvents.map(item => {
-      if (item.id === componentId) {
-        target = item;
-      }
-    });
-
-    if (target.events && target.id) {
-      const type = typeof target.events[funcName];
+    const target = componentEvents[componentId];
+    if (target) {
+      const type = typeof target[funcName];
       if (type === 'function') {
-        var result = target.events[funcName](...rest);
+        var result = target[funcName](...rest);
         return result;
       } else {
         console.warn(
@@ -30,7 +24,7 @@
       }
     } else {
       console.warn(
-        `检测到${componentId}组件尚未将其方法或者id注入到框架中，请在${componentId}组件中调用TA505.register方法注入！！！`
+        `检测到${componentId}组件尚未将组件内的方法注入到框架中，请在${componentId}组件中调用TA505.register方法注入！！！`
       );
     }
   };
@@ -158,12 +152,15 @@
 
   // 注册
   const register = obj => {
-    const objEvents = obj.events;
     const checkObj = () => {
-      if (!obj.id) {
+      var componentId= Object.keys(obj)[0]
+      console.log('componentId', componentId);
+      
+      if (!componentId) {
         console.warn(`组件向框架注入事件时未携带组件id`);
         return;
       }
+      const objEvents = obj[componentId];
       if (!objEvents.getData || typeof objEvents.getData !== 'function') {
         console.warn(
           `检测到${obj.id}组件注入的对象中未定义events.getData 或者 events.getData 不是一个函数。请更改后重新注入！！！`
@@ -191,15 +188,9 @@
       }
     };
     checkObj();
-    let isExist = false;
-    componentEvents.map(item => {
-      if (item.id === obj.id) {
-        isExist = true;
-        item.events = Object.assign({}, obj.events);
-      }
-    });
-    if (!isExist) {
-      componentEvents.push(obj);
+    componentEvents = {
+      ...componentEvents,
+      ...obj
     }
   };
 
