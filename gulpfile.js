@@ -7,6 +7,8 @@ const { src, dest, parallel, series, watch } = require('gulp'),
   autoprefixer = require('gulp-autoprefixer'),
   babel = require('gulp-babel'),
   imagemin = require('gulp-imagemin'),
+  uglify = require('gulp-uglify'),
+  pipeline = require('readable-stream').pipeline,
   gulpSass = require('gulp-sass');
 
 gulpSass.compiler = require('node-sass');
@@ -49,6 +51,7 @@ const scss = () => {
 const compileJS = () => {
   return src('./src/js/*.js')
     .pipe(babel())
+    .pipe(uglify())
     .pipe(dest('./dist/js'));
 };
 
