@@ -1,0 +1,12 @@
+@charset "UTF-8";
+
+@font-face {
+  font-family: "pangMenZhengDao-gonggongfuwupingtai";
+  src: url("pangMenZhengDao-gonggongfuwupingtai.woff2") format("woff2"),
+       url("pangMenZhengDao-gonggongfuwupingtai.woff") format("woff"),
+       url("pangMenZhengDao-gonggongfuwupingtai.ttf") format("truetype"),
+       url("pangMenZhengDao-gonggongfuwupingtai.eot") format("embedded-opentype"),
+       url("pangMenZhengDao-gonggongfuwupingtai.svg") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
