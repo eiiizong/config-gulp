@@ -1,0 +1,19 @@
+/**
+ * px 转 rpx
+ * 主要针对 H5 自适应 $rem 自定义大小
+
+ * @example scss
+ *
+ * .element {
+ *   width: px2rem(75);
+ * }
+ *
+ * // CSS Output
+ * .element {
+ *   width: 1rem;
+ * }
+ */
+@function px2rem($px) {
+  $rem: 75;
+  @return $px/$rem + rem;
+}

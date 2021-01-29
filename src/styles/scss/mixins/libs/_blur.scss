@@ -1,0 +1,27 @@
+/**
+ * 滤镜 blur 模糊 毛玻璃效果
+ * @example scss
+ *
+ * .element {
+ *   @include flexCenter();
+ * }
+ *
+ * // CSS Output
+ * .element {
+ *   display: flex;
+ *   align-items: center;
+ *   justify-content: center;
+ * }
+ */
+@mixin blur($blur) {
+  @if $ie {
+    filter: progid:DXImageTransform.Microsoft.Blur(PixelRadius='${blur}', MakeShadow=false); // IE6~IE9
+    filter: url(blur.svg#blur); // IE10, IE11
+    *zoom: 1;
+  }
+  -webkit-filter: blur($blur); // Chrome, Opera
+  -moz-filter: blur($blur);
+  -o-filter: blur($blur);
+  -ms-filter: blur($blur);
+  filter: blur($blur);
+}

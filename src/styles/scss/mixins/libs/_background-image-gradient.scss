@@ -1,0 +1,26 @@
+// 背景图片 url
+
+/*
+// @example scss
+.element {
+  @include backgroundImageUrl('01', 'png', './images/');
+}
+
+// CSS Output
+.element {
+  background-image: url(./images/01.png);
+}
+*/
+@mixin backgroundImageGradient(
+  $color1,
+  $color2,
+  $direction: 0deg,
+  $type: 'liner'
+) {
+  @if $type == 'liner' {
+    background-image: linear-gradient($direction, $color1, $color2);
+  }
+  @if $ie9 {
+    background-color: mix($color1, $color2) !important;
+  }
+}

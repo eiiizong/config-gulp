@@ -1,0 +1,24 @@
+/**
+ * 最小宽度
+ *
+ * @example
+ *
+ * .element {
+ *   @include minWidth(100%);
+ * }
+ *
+ * // CSS Output
+ * .element {
+ *   min-width: 100%;
+ *   width: 100% !important;
+ * }
+ */
+
+@mixin minWidth($width) {
+  min-width: $width;
+  width: 100% !important;
+  // 兼容 ie6-7 写法
+  @if $lte7 {
+    _width: $width;
+  }
+}

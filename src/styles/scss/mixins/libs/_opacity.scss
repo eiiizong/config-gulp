@@ -1,0 +1,19 @@
+/**
+ * 透明度设置
+ * @example
+ *   .element {
+ *     @include opacity(50);
+ *   }
+ *
+ *   // CSS Output
+ *   .element {
+ *     opacity: .5;
+ *   }
+ */
+@mixin opacity($opacity) {
+  opacity: $opacity / 100;
+  // setting.scss 中 $filter 为 true 才 渲染
+  @if $filter {
+    filter: alpha(opacity=$opacity); // 兼容ie
+  }
+}

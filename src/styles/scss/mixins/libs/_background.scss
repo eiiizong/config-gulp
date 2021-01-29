@@ -1,0 +1,40 @@
+/**
+ * 背景图片
+ * @example scss
+ *
+ * .element {
+ *   @include background(20px, 20px, '01', 'png', './images/');
+ * }
+ *
+ * // CSS Output
+ * .element {
+ *   width: 20px;
+ *   height: 20px;
+ *   background-repeat: no-repeat;
+ *   background-position: center center;
+ *   background-size: 100% 100%;
+ *   background-color: transparent;
+ *   background-image: url(./images/01.png);
+ * }
+ */
+@mixin background(
+  $width,
+  $height,
+  $name,
+  $type: 'png',
+  $img-url-perfix: $img-url-base
+) {
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 100% 100%;
+  background-color: transparent;
+  @if type-of($width) == 'number' {
+    width: $width;
+  }
+  @if type-of($height) == 'number' {
+    height: $height;
+  }
+  @if type-of($name) == 'string' {
+    background-image: url($img-url-perfix+$name+'.'+$type);
+  }
+}

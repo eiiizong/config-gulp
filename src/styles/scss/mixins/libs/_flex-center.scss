@@ -1,0 +1,20 @@
+/**
+ * 元素居中 —— flex
+ * @example scss
+ *
+ * .element {
+ *   @include flexCenter();
+ * }
+ *
+ * // CSS Output
+ * .element {
+ *   display: flex;
+ *   align-items: center;
+ *   justify-content: center;
+ * }
+ */
+@mixin flexCenter() {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

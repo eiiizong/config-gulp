@@ -1,12 +1,1 @@
 /*! 通用样式 */
-html {
-    overflow-x: hidden;
-}
-
-.app {
-    display: flex;
-    flex-direction: column;
-    background-color: $body-bgc;
-    min-height: 100%;
-}
-

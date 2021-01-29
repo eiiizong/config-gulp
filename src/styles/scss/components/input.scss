@@ -1,7 +1,7 @@
 /*! input css */
-input[type="checkbox"],
-input[type="file"],
-input[type="radio"] {
+input[type='checkbox'],
+input[type='file'],
+input[type='radio'] {
   display: none;
 }
 // 清除 type=number 时的按钮
@@ -9,7 +9,7 @@ input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
   -webkit-appearance: none;
 }
-input[type="number"] {
+input[type='number'] {
   -moz-appearance: textfield;
 }
 
@@ -26,11 +26,27 @@ select::-ms-expand {
 
 // 清除 文本域的默认样式
 textarea {
+  display: block;
+  width: 100%;
   resize: none;
   outline: 0;
   -webkit-appearance: none;
   white-space: pre-wrap;
   word-wrap: break-word;
+  border-radius: $border-radius-xs;
+  background-color: $input-background-color;
+  border: 1px solid $input-border-color;
+  height: 200px;
+  line-height: 1.4;
+  padding: $input-padding;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  transition: box-shadow border-color 0.3s ease-in-out;
+  &.focus,
+  &:focus {
+    border-color: $input-border-color-focus;
+    box-shadow: $box-shadow;
+  }
 }
 // placeholder 样式控制
 input::-webkit-input-placeholder {
@@ -42,10 +58,91 @@ input {
   width: 100%;
   font-size: $input-font-size;
   line-height: 1.4;
-  background-color: transparent;
-  border: 0;
+  height: $input-height;
+  border: 1px solid $input-border-color;
+  background-color: $input-background-color;
   outline: 0;
-  border-radius: 0;
+  border-radius: $border-radius-xs;
   color: $input-color;
-  padding: 0;
+  padding: $input-padding;
+  transition: box-shadow border-color 0.3s ease-in-out;
+  &.focus,
+  &:focus {
+    border-color: $input-border-color-focus;
+    box-shadow: $box-shadow;
+  }
+
+  @include placeholder($color-text-placeholder);
+  @if $ie8 {
+    line-height: $input-height;
+  }
+  @if $lte9 {
+    &::-ms-clear,
+    &::-ms-reveal {
+      display: none;
+    }
+  }
 }
+// select {
+//   border: 0;
+//   width: 64px;
+//   height: 18px;
+//   background-color: #ffffff;
+//   border-radius: 1px;
+//   border: solid 1px #dddddd;
+//   text-align: center;
+//   position: relative;
+//   vertical-align: middle;
+// }
+
+// .select {
+//   display: flex;
+//   align-items: center;
+//   min-width: 68px;
+//   max-width: 168px;
+//   padding-right: 20px;
+//   padding-left: 8px;
+//   position: relative;
+//   vertical-align: middle;
+//   overflow: hidden;
+//   background-color: #fff;
+//   color: #404040;
+//   border: 1px solid #ddd;
+//   text-shadow: none;
+//   transition: box-shadow 0.25s ease;
+//   z-index: 2;
+// }
+
+// .select:hover {
+//   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.15);
+// }
+
+// .select:before {
+//   content: '';
+//   position: absolute;
+//   width: 0;
+//   height: 0;
+//   border: 4px solid transparent;
+//   border-top-color: #aaa;
+//   top: 50%;
+//   transform: translateY(-50%);
+//   right: 8px;
+//   cursor: pointer;
+//   z-index: -2;
+//   margin-top: 2px;
+// }
+// .select select {
+//   cursor: pointer;
+//   width: 100%;
+//   border: none;
+//   font-size: 12px;
+//   line-height: 16px;
+//   background: transparent;
+//   background-image: none;
+//   -webkit-appearance: none;
+//   -moz-appearance: none;
+// }
+
+// .select select:focus {
+//   outline: none;
+// }

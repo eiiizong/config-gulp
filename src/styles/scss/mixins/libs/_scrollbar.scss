@@ -1,0 +1,66 @@
+/**
+ * 设置滚动条样式
+ * @example scss
+ *
+ * .element {
+ *   @include scrollbar(6px, 6px, #eee, #fff);
+ * }
+ *
+ * // CSS Output
+ * .element::-webkit-scrollbar {
+ *   width: 6px;
+ *   height: 6px;
+ * }
+ * .element::-webkit-scrollbar-thumb {
+ *   border-radius: 100px;
+ *   background-color: #eee;
+ * }
+ * .element::-webkit-scrollbar-track {
+ *   border-radius: 0;
+ *   background-color: #fff;
+ * }
+ */
+
+@mixin scrollbar(
+  $width: $scrollbar-width,
+  $height: $scrollbar-height,
+  $thumb-bgc: $scrollbar-thumb-bgc,
+  $track-bgc: $scrollbar-track-bgc
+) {
+  // 当参数为数字时才有效 否则添加伪元素提示错误
+  @if type-of($width) == 'number' and type-of($height) == 'number' {
+    &::-webkit-scrollbar {
+      // 高宽分别对应横竖滚动条的尺寸大小
+      width: $width;
+      height: $height;
+    }
+  } @else {
+    // 错误提示
+    &::before {
+      content: 'We expect you to pass in a Number, but you passed in a ' +
+        type-of($width);
+      color: #f00;
+    }
+  }
+
+  // 当参数为颜色时才有效 否则添加伪元素提示错误
+  @if (type-of($thumb-bgc) == 'color' and type-of($track-bgc) == 'color') {
+    &::-webkit-scrollbar-thumb {
+      // 滚动条里面小方块 即外部可滚动的方块
+      border-radius: 100px;
+      background-color: $thumb-bgc;
+    }
+    &::-webkit-scrollbar-track {
+      // 滚动条里面轨道
+      border-radius: 0;
+      background-color: $track-bgc;
+    }
+  } @else {
+    // 错误提示
+    &::after {
+      content: 'We expect you to pass in a Number, but you passed in a ' +
+        type-of($width);
+      color: #f00;
+    }
+  }
+}

@@ -1,13 +1,11 @@
-// 清除浮动
+@import '../mixins/libs/clearfix';
+
 .clearfix {
-  display: block;
-  zoom: 1;
-  &:after {
-    content: "";
-    display: block;
-    font-size: 0;
-    height: 0;
-    clear: both;
-    visibility: hidden;
+  @include clearfix;
+  .fl {
+    float: left;
+  }
+  .fr {
+    float: right;
   }
 }

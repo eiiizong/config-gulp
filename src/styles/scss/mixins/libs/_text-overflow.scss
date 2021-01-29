@@ -1,0 +1,62 @@
+/**
+ * 文本超出 显示省略号 一行
+ * @example scss 01
+ *
+ * .element {
+ *   @include textOverflow();
+ * }
+ *
+ * // CSS Output
+ * .element {
+ *   -ms-text-overflow: ellipsis;
+ *   text-overflow: ellipsis;
+ *   overflow: hidden;
+ *   white-space: nowrap;
+ * }
+ *
+ * 文本超出 显示省略号 两行
+ * @example scss 02
+ *
+ * .element {
+ *   @include textOverflow(2);
+ * }
+ *
+ * // CSS Output
+ * .element {
+ *   -ms-text-overflow: ellipsis;
+ *   text-overflow: ellipsis;
+ *   overflow: hidden;
+ *   display: -webkit-box;
+ *    -webkit-line-clamp: 2;
+ *   -webkit-box-orient: vertical;
+ * }
+ */
+
+@mixin textOverflow($rows: 1) {
+  // 当参数为数字时才有效
+  @if type-of($rows) == 'number' {
+    -ms-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    @if $rows == 1 {
+      white-space: nowrap;
+    } @else {
+      display: -webkit-box;
+      -webkit-line-clamp: $rows;
+      -webkit-box-orient: vertical;
+    }
+    @if $ie {
+      display: inline-block;
+      white-space: nowrap;
+      max-width: 100%;
+    }
+  } @else {
+    // 错误提示
+    &::after {
+      content: 'We expect you to pass in a Number, but you passed in a ' +
+      type-of($rows);
+      color: #f00;
+    }
+    
+  }
+}

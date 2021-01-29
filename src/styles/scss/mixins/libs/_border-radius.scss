@@ -1,0 +1,14 @@
+/**
+
+ * }
+ */
+@mixin borderRadius($length, $direction: none) {
+  -webkit-border-radius: $length;
+  -ms-border-radius: $length;
+  -moz-border-radius: $length;
+  -o-border-radius: $length;
+  border-radius: $length;
+  @if $ie8 {
+    behavior: url(./css/PIE.htc);
+  }
+}

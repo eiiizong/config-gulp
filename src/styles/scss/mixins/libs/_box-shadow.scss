@@ -1,0 +1,14 @@
+/**
+
+ * }
+ */
+@mixin boxShadow($value) {
+  -webkit-box-shadow: $value;
+  -ms-box-shadow: $value;
+  -moz-box-shadow: $value;
+  -o-box-shadow: $value;
+  box-shadow: $value;
+  @if $ie8 {
+    behavior: url(./css/PIE.htc);
+  }
+}

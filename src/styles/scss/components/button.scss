@@ -1,17 +1,66 @@
 // button
-.btn,
-button {
-  width: auto;
-  height: auto;
+.btn {
+  width: 100%;
+  height: $button-height;
   display: block;
-  border: 0;
   outline: 0;
-  border-radius: 0;
   text-align: center;
-  padding: 0;
+  color: $button-color;
+  font-size: $button-font-size;
+  line-height: $button-height - 2px;
+  background-color: $button-background-color;
+  border-radius: 2px;
+  border: 1px solid $button-background-color;
   margin: 0;
-  font-size: $btn-font-size;
-  line-height: 1;
-  color: $btn-color;
+  padding: $button-padding;
+  outline: 0;
+  cursor: pointer;
+  transition: border-color, color, background-color, border-radius, opacity,
+    font-weight 0.3s ease-in-out;
+  font-weight: 400;
+  @include opacity(100);
+  @include noSelect;
+  &.ghost {
+    background-color: #fff;
+    border-color: $color-border-base;
+    color: $color-grey-1;
+    &:hover {
+      background-color: #fff;
+      border-color: $button-background-color-hover;
+      color: $button-background-color-hover;
+    }
+    &.active {
+      background-color: #fff;
+      border-color: $button-background-color-hover;
+      color: $button-background-color-hover;
+    }
+  }
+  &:hover {
+    background-color: $button-background-color-hover;
+    border-color: $button-background-color-hover;
+    color: $button-color-hover;
+    
+    // font-weight: 500;
+  }
+  // active 时的样式
+  &.active {
+    background-color: $button-background-color-active;
+    border-color: $button-background-color-active;
+    color: $button-color-active;
+    // font-weight: 500;
+  }
+  // disabled 时的样式
+  &[disabled] {
+    cursor: not-allowed;
+    background-color: $button-background-color-disabled;
+    border-color: $button-background-color-disabled;
+    color: $button-color-disabled;
+    // font-weight: 400;
+    &:hover {
+      background-color: $button-background-color-disabled;
+      border-color: $button-background-color-disabled;
+      color: $button-color-disabled;
+      // font-weight: 400;
+    }
+  }
 }
-

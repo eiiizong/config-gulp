@@ -145,7 +145,7 @@
   const init = (...rest) => {
     configData.components.map(item => {
       if (item.init) {
-        resultData[item.id] = runFunc(item.id, 'initData', ...rest);
+        runFunc(item.id, 'initData', ...rest);
       }
     });
   };

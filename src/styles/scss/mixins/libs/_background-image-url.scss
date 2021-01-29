@@ -1,0 +1,18 @@
+/**
+ * 背景图片 url 
+ * @example scss
+ *
+ * .element {
+ *   @include backgroundImageUrl('01', 'png', './images/');
+ * }
+ *
+ * // CSS Output
+ * .element {
+ *   background-image: url(./images/01.png);
+ * }
+ */
+@mixin backgroundImageUrl($name, $type: 'png', $img-url-perfix: $img-url-base) {
+  @if type-of($name) == 'string' {
+    background-image: url($img-url-perfix+$name+'.'+$type);
+  }
+}

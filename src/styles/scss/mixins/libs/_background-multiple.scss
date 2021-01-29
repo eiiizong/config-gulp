@@ -1,0 +1,38 @@
+/**
+ * 背景图片 2x 3x 
+ * @example scss
+ *
+ * .element {
+ *   @include backgroundMultiple(20px, 20px, 'logo', './images/');
+ * }
+ *
+ * // CSS Output
+ * .element {
+ *   width: 20px;
+ *   height: 20px;
+ *   background-repeat: no-repeat;
+ *   background-position: center center;
+ *   background-size: 100% 100%;
+ *   background-color: transparent;
+ *   background-image: url(./images/logo@2x.png);
+ * }
+ * @media (-webkit-min-device-pixel-ratio: 3), (min-device-pixel-ratio: 3) {
+ *   .element {
+ *      background-image: url(./images/logo@3x.png);
+ *    } 
+ * }
+ */
+@mixin backgroundMultiple(
+  $width,
+  $height,
+  $name,
+  $img-url-perfix: $img-url-base
+) {
+  background-image: url($img-url-perfix+$name+'@2x.png');
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 100% 100%;
+  @media (-webkit-min-device-pixel-ratio: 3), (min-device-pixel-ratio: 3) {
+    background-image: url($img-url-perfix+$name+'@3x.png');
+  }
+}

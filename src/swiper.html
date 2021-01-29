@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<!-- 通过 flexible 将html标签上设置字体大小 -->
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no"
+    />
+    <!-- 关闭将数字字符串识别为电话号码 -->
+    <meta name="format-detection" content="telephone=no" />
+    <!-- 关闭识别邮箱 -->
+    <meta name="format-detection" content="email=no" />
+    <!-- 删除默认的苹果工具栏和菜单栏 -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <!-- 控制状态栏显示样式 -->
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+
+    <title>banner</title>
+
+    <!-- swiper css -->
+    <link rel="stylesheet" href="./lib/swiper/css/swiper.css" />
+    <!-- 引入最终生成编译的css -->
+    <link rel="stylesheet" href="./css/index.min.css" />
+  </head>
+
+  <body>
+    <div class="ez-swiper">
+      <div class="swiper-container">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <div class="swiper-slide-bg">
+              <img src="./images/banner/01.png" alt="" />
+            </div>
+            <div class="swiper-slide-con">内容1</div>
+          </div>
+          <div class="swiper-slide">
+            <div class="swiper-slide-bg">
+              <img src="./images/banner/02.png" alt="" />
+            </div>
+            <div class="swiper-slide-con">内容2</div>
+          </div>
+          <div class="swiper-slide">
+            <div class="swiper-slide-bg">
+              <img src="./images/banner/03.png" alt="" />
+            </div>
+            <div class="swiper-slide-con">内容3</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+  <!-- 引入 js 文件 -->
+  <script src="./lib/swiper/js/swiper.min.js"></script>
+  <script src="./lib/jquery/jquery.min.js"></script>
+  <script>
+    $(function () {
+      var renderSwiper = function () {
+        var mySwiper = new Swiper('.swiper-container', {
+          direction: 'horizontal', // 切换选项 垂直 vertical 水平 horizontal
+          speed: 500, // 切换速度，即slider自动滑动开始到结束的时间（单位ms），也是触摸滑动时释放至贴合的时间。
+          loop: true, // 循环模式选项
+          autoplay: true, // 自动切换
+          keyboard: true, // 设置开启键盘来控制Swiper切换。
+          mousewheel: true, // 开启鼠标滚轮控制Swiper切换。可设置鼠标选项，或true使用默认值。
+          delay: 3000, // 自动切换的时间间隔，单位ms
+          effect: 'slide', //  slide的切换效果，默认为"slide"（位移切换），可设置为'slide'（普通切换、默认）,"fade"（淡入）"cube"（方块）"coverflow"（3d流）"flip"（3d翻转）。
+          slidesPerView: 1, // 设置slider容器能够同时显示的slides数量(carousel模式)。
+          autoHeight: true, // 自动高度。设置为true时，wrapper和container会随着当前slide的高度而发生变化。
+        })
+      }
+      var init = function () {
+        renderSwiper()
+      }
+      init()
+    })
+  </script>
+</html>

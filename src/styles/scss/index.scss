@@ -1,28 +1,7 @@
-// 此页面引入 各页面样式 进行样式合并
+@import './variables/default';
 
-// 全局控制变量
-@import "./variable.scss";
+@import './mixins/index';
 
+@import './components/index.scss';
 
-@import "./components/reset.scss";
-
-@import "./components/no-select.scss";
-
-@import "./components/button.scss";
-
-@import "./components/icon.scss";
-
-@import "./components/flex.scss";
-
-@import "./components/input.scss";
-
-@import "./components/clearfix.scss";
-
-@import "./components/scrollbar.scss";
-
-// 通用样式
-@import "./pages/common.scss";
-
-// 各页面样式
-@import "./pages/home.scss";
-
+@import './pages/index.scss';

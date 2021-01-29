@@ -1,0 +1,42 @@
+/**
+ * input placeholder 样式控制
+ * @example scss
+ *
+ * .element {
+ *   @include placeholder(#888);
+ * }
+ *
+ * // CSS Output
+ * .element:-moz-placeholder {
+ *   font-size: inherit;
+ *   color: #888;
+ *   text-align: left;
+ * }
+ * .element:-ms-input-placeholder {
+ *   font-size: inherit;
+ *   color: #888;
+ *   text-align: left;
+ * }
+ * .element::-webkit-input-placeholder {
+ *   font-size: inherit;
+ *   color: #888;
+ *   text-align: left;
+ * }
+ */
+@mixin placeholder($color: #999, $fontSize: inherit, $align: left) {
+  &:-moz-placeholder {
+    font-size: $fontSize;
+    color: $color;
+    text-align: $align;
+  }
+  &:-ms-input-placeholder {
+    font-size: $fontSize;
+    color: $color;
+    text-align: $align;
+  }
+  &::-webkit-input-placeholder {
+    font-size: $fontSize;
+    color: $color;
+    text-align: $align;
+  }
+}

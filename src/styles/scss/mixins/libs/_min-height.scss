@@ -1,0 +1,24 @@
+/**
+ * 最小高度
+ *
+ * @example
+ *
+ * .element {
+ *   @include minHeight(20px);
+ * }
+ *
+ * // CSS Output
+ * .element {
+ *   min-height: 20px;
+ *   height: auto !important;
+ * }
+ */
+
+@mixin minHeight($height) {
+  min-height: $height;
+  height: auto !important;
+  // 兼容 ie6-7 写法
+  @if $lte7 {
+    _height: $height;
+  }
+}

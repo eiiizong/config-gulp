@@ -1,0 +1,27 @@
+/**
+ * 清除浮动 
+ * @example scss
+ *
+ * .element {
+ *   @include clearfix;
+ * }
+ *
+ * // CSS Output
+ * .element {
+ *   zoom: 1;
+ * }
+ * .element::after {
+ *   clear: both;
+ *   content: '';
+ *   display: block;
+ * }
+ */
+
+ @mixin clearfix {
+  zoom: 1;
+  &::after {
+    clear: both;
+    content: '';
+    display: block;
+  }
+}

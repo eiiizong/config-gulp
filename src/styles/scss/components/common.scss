@@ -1,0 +1,58 @@
+.app {
+  width: 100%;
+  @include minWidth($app-min-width);
+  @include minHeight(100%);
+  font-family: MicrosoftYaHei, sans-serif, Avenir, Helvetica, Arial;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: $app-background-color;
+  position: relative;
+  overflow: auto;
+  padding-top: $app-nav-height + $app-toolbar-height;
+  padding-bottom: $app-footer-height;
+  &.ss {
+    background-color: #f5f5f5;
+  }
+}
+// 配合 v-cloak 指令使用 可以隐藏未编译的 Mustache 标签直到实例准备完毕。
+[v-cloak] {
+  display: none;
+}
+img {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+}
+.container {
+  width: $app-container-width;
+  margin: auto;
+}
+
+/*
+ * Hide visually and from screen readers, but maintain layout
+*/
+.invisible {
+  visibility: hidden;
+}
+
+/*
+ * Hide visually and from screen readers
+*/
+.hidden,
+[hidden] {
+  display: none !important;
+}
+td {
+  // &.textOverflow {
+  //   table-layout: fixed;
+  //   margin: 0;
+  //   @include textOverflow();
+  //   span {
+  //     // @include textOverflow();
+  //     // width: 100%;
+  //     // display: block;
+  //     // line-height: 50px;
+  //   }
+  // }
+}
