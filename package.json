@@ -39,7 +39,6 @@
     "gulp-uglify": "^3.0.2",
     "node-sass": "^4.13.0"
   },
-  "dependencies": {},
   "browserslist": [
     "> 1%",
     "last 2 versions",

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<!-- 通过 flexible 将html标签上设置字体大小 -->
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no"
+    />
+    <!-- 关闭将数字字符串识别为电话号码 -->
+    <meta name="format-detection" content="telephone=no" />
+    <!-- 关闭识别邮箱 -->
+    <meta name="format-detection" content="email=no" />
+    <!-- 删除默认的苹果工具栏和菜单栏 -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <!-- 控制状态栏显示样式 -->
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+
+    <title>惠民惠农</title>
+
+    <!-- 引入最终生成编译的css -->
+    <link rel="stylesheet" href="./css/index.min.css" />
+  </head>
+
+  <body>
+    <div class="app">
+      <div class="hnhm-wrapper">
+        <div id="basic_info" class="wrapper basic-info-wrapper" v-cloak>
+          <div class="wrapper-title">基本信息</div>
+        </div>
+        <div
+          id="big_data_portrait"
+          class="wrapper big-data-portrait-wrapper"
+          v-cloak
+        >
+          <div class="wrapper-title">大数据画像</div>
+        </div>
+      </div>
+      <div class="hnhm-wrapper">
+        <div id="personal_timeline" v-cloak>
+          <div class="wrapper-title">个人时光轴</div>
+        </div>
+        <div id="statistics_of_subsidy_enjoyment" v-cloak>
+          <div class="wrapper-title">补贴享受统计</div>
+        </div>
+      </div>
+    </div>
+  </body>
+  <!-- 引入 js 文件 -->
+  <script src="./lib/vue/dist/vue.min.js"></script>
+  <script src="./js/hmhn-01-01.js"></script>
+  <script src="./js/hmhn-01-02.js"></script>
+  <script src="./js/hmhn-01-03.js"></script>
+  <script src="./js/hmhn-01-04.js"></script>
+</html>

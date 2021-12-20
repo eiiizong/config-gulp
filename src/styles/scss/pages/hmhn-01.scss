@@ -1,0 +1,47 @@
+.app {
+  background-color: #f5f5f5;
+}
+.hnhm-wrapper {
+  display: flex;
+}
+.wrapper {
+  background: #ffffff;
+  border: 1px solid #dee8ef;
+  margin-right: 12px;
+  padding: 0 16px;
+  .wrapper-title {
+    position: relative;
+    line-height: 44px;
+    border-bottom: 1px solid #dee8ef;
+    padding-left: 12px;
+    font-size: 14px;
+    font-weight: 700;
+    color: #404040;
+    &::after,
+    &::before {
+      position: absolute;
+      content: '';
+      height: 16px;
+      top: 50%;
+      transform: translateY(-50%);
+      left: 0;
+    }
+    &::before {
+      width: 4px;
+      background: #188ad9;
+    }
+    &::after {
+      width: 2px;
+      height: 16px;
+      left: 6px;
+      background: #13c251;
+    }
+  }
+  &.basic-info-wrapper {
+    width: 320px;
+  }
+  &.big-data-portrait-wrapper {
+    flex: 1;
+    overflow: hidden;
+  }
+}
