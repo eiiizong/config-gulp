@@ -1,5 +1,5 @@
 html {
-  overflow: hidden;
+  overflow: auto;
 }
 
 .app {
@@ -45,6 +45,7 @@ html {
   }
   &.basic-info-wrapper {
     width: 320px;
+    margin-bottom: 12px;
     .info-wrapper {
       padding: 12px 0;
       display: flex;
@@ -115,7 +116,7 @@ html {
     flex: 1;
     overflow: hidden;
     margin-right: 0;
-
+    margin-bottom: 12px;
     .con {
       display: flex;
       align-items: center;
@@ -304,4 +305,19 @@ html {
       }
     }
   }
+  &.personal-timeline-wrapper {
+    width: 320px;
+  }
+  
+}
+.con-02 {
+  flex: 1;
+  overflow: hidden;
+}
+.statistics-of-subsidy-enjoyment-wrapper {
+  width: 100%;
+  margin-bottom: 12px;
+}
+.subsidy-etails-wrapper {
+  width: 100%;
 }

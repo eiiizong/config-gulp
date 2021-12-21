@@ -1,7 +1,7 @@
 
 var hnhm0103 = new Vue(
   {
-    el: 'basicInfo',
+    el: '#personal_timeline',
     data() {
       return {
 

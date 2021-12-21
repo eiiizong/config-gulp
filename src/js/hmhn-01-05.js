@@ -1,7 +1,7 @@
 
 var hnhm0104 = new Vue(
   {
-    el: '#statistics_of_subsidy_enjoyment',
+    el: '#subsidy_details',
     data() {
       return {
 
