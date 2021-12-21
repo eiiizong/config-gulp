@@ -1,5 +1,6 @@
 .app {
   background-color: #f5f5f5;
+  padding: 20px;
 }
 .hnhm-wrapper {
   display: flex;
@@ -39,9 +40,75 @@
   }
   &.basic-info-wrapper {
     width: 320px;
+    .info-wrapper {
+      padding: 12px 0;
+      display: flex;
+      align-items: center;
+      .info {
+        .name {
+          display: flex;
+          font-size: 14px;
+          font-weight: 600;
+          line-height: 22px;
+          color: #989898;
+          h2 {
+            font-weight: bold;
+            line-height: 22px;
+            color: #333333;
+            margin-right: 8px;
+          }
+          .iconimg {
+            margin-left: 8px;
+          }
+        }
+        .idcard {
+          font-size: 12px;
+          font-weight: 400;
+          line-height: 22px;
+          color: #666666;
+          opacity: 1;
+        }
+      }
+      .avatar {
+        width: 68px;
+        margin-right: 12px;
+      }
+    }
+    .other-info {
+      font-size: 12px;
+      font-weight: 400;
+      line-height: 20px;
+      color: #666666;
+      padding: 16px 0;
+      border-top: 1px solid #dee8ef;
+      .info-cell {
+        display: flex;
+        align-items: center;
+        margin-bottom: 6px;
+        white-space: nowrap;
+        .value {
+          overflow: hidden;
+        }
+        .tag {
+          padding: 2px 6px;
+          background: #13c251;
+          border-radius: 2px;
+          font-size: 12px;
+          font-weight: 400;
+          line-height: 16px;
+          color: #fff;
+          margin-left: 8px;
+          &.tag-02 {
+            color: #13c251;
+            background-color: rgba(#13c251, 0.1);
+          }
+        }
+      }
+    }
   }
   &.big-data-portrait-wrapper {
     flex: 1;
     overflow: hidden;
+    margin-right: 0;
   }
 }
