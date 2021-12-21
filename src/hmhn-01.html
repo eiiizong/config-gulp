@@ -181,6 +181,19 @@
             v-cloak
           >
             <div class="wrapper-title">补贴详情</div>
+            <div class="toolbar">
+              <div class="items">
+                <div
+                  v-for="item in tabData"
+                  class="item"
+                  :class="[item.checked?'checked':'']"
+                  @click="handleClickTab(item.id)"
+                >
+                  {{item.name}}
+                </div>
+              </div>
+            </div>
+            <div class="table"></div>
           </div>
         </div>
       </div>
@@ -188,6 +201,7 @@
   </body>
   <!-- 引入 js 文件 -->
   <script src="./lib/swiper/js/swiper.min.js"></script>
+  <script src="https://unpkg.com/@better-scroll/core@latest/dist/core.min.js"></script>
   <script src="./lib/vue/dist/vue.min.js"></script>
   <script src="./js/hmhn-01-01.js"></script>
   <script src="./js/hmhn-01-02.js"></script>
