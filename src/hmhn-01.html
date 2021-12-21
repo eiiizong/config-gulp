@@ -20,6 +20,7 @@
     <title>惠民惠农</title>
 
     <!-- 引入最终生成编译的css -->
+    <link rel="stylesheet" href="./lib/swiper/css/swiper.min.css" />
     <link rel="stylesheet" href="./css/index.min.css" />
   </head>
 
@@ -134,6 +135,45 @@
             v-cloak
           >
             <div class="wrapper-title">补贴享受统计</div>
+            <div class="cells">
+              <div class="cell">
+                <div class="key">已享受补贴：</div>
+                <div class="value">2</div>
+                <div class="unit">项</div>
+              </div>
+              <div class="cell">
+                <div class="key">已享受金额：</div>
+                <div class="value">4980.03</div>
+                <div class="unit">元</div>
+              </div>
+              <div class="cell">
+                <div class="key">已发放期数：</div>
+                <div class="value">20</div>
+                <div class="unit">期</div>
+              </div>
+            </div>
+            <div class="banner">
+              <div class="swiper">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide" v-for="item in 6">
+                    <div class="silde-name">
+                      <i class="iconimg"></i>
+                      <div>残疾人机动轮椅车燃油补贴</div>
+                      <div class="tag">成都市</div>
+                    </div>
+                    <div class="silde-con">
+                      <span>最新发放期号：202109</span>
+                      <span>合计发放期数：1期</span>
+                      <span>合计发放金额：365元</span>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- 如果需要导航按钮 -->
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+              </div>
+            </div>
           </div>
           <div
             id="subsidy_details"
@@ -147,6 +187,7 @@
     </div>
   </body>
   <!-- 引入 js 文件 -->
+  <script src="./lib/swiper/js/swiper.min.js"></script>
   <script src="./lib/vue/dist/vue.min.js"></script>
   <script src="./js/hmhn-01-01.js"></script>
   <script src="./js/hmhn-01-02.js"></script>

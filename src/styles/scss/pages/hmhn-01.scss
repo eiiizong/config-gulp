@@ -391,6 +391,116 @@ html {
 .statistics-of-subsidy-enjoyment-wrapper {
   width: 100%;
   margin-bottom: 12px;
+  .cells {
+    display: flex;
+    align-items: center;
+    padding: 14px 0;
+    .cell {
+      display: flex;
+      align-items: center;
+      margin-right: 24px;
+      font-size: 12px;
+      font-weight: 400;
+      line-height: 16px;
+      color: #404040;
+      .value {
+        font-size: 14px;
+        font-weight: bold;
+        color: #007bcb;
+        opacity: 1;
+        margin-right: 4px;
+      }
+    }
+  }
+  .banner {
+    width: 100%;
+    position: relative;
+    padding: 0 32px;
+    overflow: hidden;
+    margin-bottom: 14px;
+    .swiper {
+      width: 100%;
+      height: 75px;
+      overflow: hidden;
+    }
+    .swiper-button-next,
+    .swiper-button-prev {
+      width: 20px;
+      height: 75px;
+      background: #007bcb;
+      border-radius: 5px 0px 0px 5px;
+      transform: translateY(-50%);
+      margin-top: 0;
+      &::after {
+        color: #fff;
+        font-size: 14px;
+      }
+      &.swiper-button-disabled {
+        background: #e8f6ff;
+        border: 1px solid #007bcb;
+        &::after {
+          color: #007bcb;
+        }
+      }
+    }
+    .swiper-button-prev {
+      left: 0;
+    }
+    .swiper-button-next {
+      right: 0;
+      border-radius: 0 5px 5px 0px;
+    }
+    .swiper-slide {
+      height: 75px;
+      border: 1px solid #dbe2eb;
+      opacity: 1;
+      border-radius: 4px;
+      padding: 12px 16px;
+      .silde-name {
+        display: flex;
+        align-items: center;
+        font-size: 14px;
+        font-weight: 700;
+        line-height: 22px;
+        color: #404040;
+        div {
+          overflow: hidden;
+        }
+        .iconimg {
+          width: 22px;
+          height: 22px;
+          background-image: url(../images/hmhn-01/icon-07.png);
+          margin-right: 8px;
+        }
+        .tag {
+          padding: 1px 6px;
+          font-size: 12px;
+          font-weight: 400;
+          line-height: 1;
+          color: #ff9d00;
+          background: rgba(253, 183, 26, 0.34);
+          border: 1px solid rgba(253, 183, 26, 0.2);
+          border-radius: 2px;
+          margin-left: 8px;
+        }
+      }
+      .silde-con {
+        display: flex;
+        align-items: center;
+        font-size: 12px;
+        font-weight: 400;
+        line-height: 22px;
+        color: #666666;
+        padding-top: 11px;
+        span {
+          margin-right: 4px;
+          &:last-child {
+            margin-right: 0;
+          }
+        }
+      }
+    }
+  }
 }
 .subsidy-etails-wrapper {
   width: 100%;
