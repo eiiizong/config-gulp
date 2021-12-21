@@ -111,6 +111,21 @@
           v-cloak
         >
           <div class="wrapper-title">个人时光轴</div>
+          <div class="process">
+            <ul>
+              <li v-for="(item,index) in processData">
+                <div class="li-name">
+                  <div class="icon"></div>
+                  <div class="icon-02"></div>
+                  <div class="time">{{item.time}}</div>
+                  <div class="tag" :class="['tag-'+item.unitType]">
+                    {{item.unit}}
+                  </div>
+                </div>
+                <div class="li-con">{{item.desc}}</div>
+              </li>
+            </ul>
+          </div>
         </div>
         <div class="con-02">
           <div

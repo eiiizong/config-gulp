@@ -308,11 +308,85 @@ html {
   &.personal-timeline-wrapper {
     width: 320px;
   }
-  
 }
 .con-02 {
   flex: 1;
   overflow: hidden;
+}
+.personal-timeline-wrapper {
+  ul {
+    padding-left: 16px;
+    margin-top: 20px;
+    position: relative;
+    &::after {
+      content: '';
+      position: absolute;
+      height: 100%;
+      width: 1px;
+      top: 10px;
+      left: 0;
+      background-color: rgba(#676767, 0.1);
+    }
+  }
+  li {
+    margin-bottom: 32px;
+    .li-name {
+      display: flex;
+      align-items: center;
+      margin-bottom: 8px;
+      position: relative;
+    }
+    .li-con {
+      font-size: 12px;
+      font-weight: 400;
+      line-height: 16px;
+      color: #676767;
+    }
+    .icon {
+      width: 11px;
+      height: 11px;
+      background: linear-gradient(180deg, #46b6ff 0%, #007ccc 100%);
+      border-radius: 50%;
+      opacity: 0.1;
+      position: absolute;
+      top: 50%;
+      left: -21px;
+      transform: translateY(-50%);
+    }
+    .icon-02 {
+      position: absolute;
+      width: 5px;
+      height: 5px;
+      top: 50%;
+      left: -18px;
+      transform: translateY(-50%);
+      background: linear-gradient(180deg, #46b6ff 0%, #007ccc 100%);
+      border-radius: 50%;
+    }
+    .time {
+      font-size: 12px;
+      font-weight: 600;
+      line-height: 22px;
+      color: #007bcb;
+    }
+    .tag {
+      font-size: 12px;
+      font-weight: 600;
+      line-height: 1;
+      color: #ffffff;
+      padding: 2px 6px;
+      background: linear-gradient(90deg, #fdb71a 0%, #ff9300 100%);
+      opacity: 1;
+      border-radius: 2px;
+      margin-left: 8px;
+      &.tag-02 {
+        background: linear-gradient(90deg, #38e274 0%, #13c251 100%);
+      }
+      &.tag-03 {
+        background: linear-gradient(90deg, #45adf3 0%, #007bcb 100%);
+      }
+    }
+  }
 }
 .statistics-of-subsidy-enjoyment-wrapper {
   width: 100%;
