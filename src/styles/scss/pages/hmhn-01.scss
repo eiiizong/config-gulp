@@ -1,4 +1,9 @@
+html {
+  overflow: hidden;
+}
+
 .app {
+  width: 100%;
   background-color: #f5f5f5;
   padding: 20px;
 }
@@ -110,5 +115,193 @@
     flex: 1;
     overflow: hidden;
     margin-right: 0;
+
+    .con {
+      display: flex;
+      align-items: center;
+      padding: 24px 0;
+    }
+    .circle {
+      width: 221px;
+      height: 216px;
+      background: url(../images/hmhn-01/bg-01.png) no-repeat center center;
+      background-size: 100% 100%;
+      position: relative;
+      margin-left: 30px;
+      span {
+        position: absolute;
+        background: linear-gradient(142deg, #33afff 0%, #006dcb 100%);
+        box-shadow: 2px 3px 10px rgba(0, 123, 203, 0.3);
+        border-radius: 50%;
+        opacity: 1;
+        color: #fff;
+        font-size: 12px;
+        font-weight: bold;
+        text-align: center;
+        opacity: 0.5;
+        &.c-0 {
+          width: 60px;
+          height: 60px;
+          line-height: 60px;
+          top: 70px;
+          left: -15px;
+        }
+        &.c-1 {
+          width: 50px;
+          height: 50px;
+          line-height: 50px;
+          top: -6px;
+          left: 83px;
+        }
+        &.c-2 {
+          width: 54px;
+          height: 54px;
+          line-height: 54px;
+          top: 46px;
+          right: -14px;
+        }
+        &.c-3 {
+          width: 54px;
+          height: 54px;
+          line-height: 54px;
+          bottom: 4px;
+          left: 105px;
+          background: linear-gradient(142deg, #33afff 0%, #006dcb 100%);
+          box-shadow: 2px 3px 10px rgba(0, 123, 203, 0.3);
+        }
+      }
+    }
+    .items {
+      display: flex;
+      flex: 1;
+      overflow: hidden;
+      flex-wrap: wrap;
+      padding-left: 60px;
+      justify-content: space-between;
+      .item {
+        width: 48%;
+        height: 66px;
+        border: 1px solid #dbe2eb;
+        opacity: 1;
+        border-radius: 4px;
+        margin-bottom: 12px;
+
+        .item-name {
+          display: flex;
+          align-items: center;
+          height: 32px;
+          background: linear-gradient(
+            90deg,
+            rgba(0, 123, 203, 0.05) 0%,
+            rgba(255, 255, 255, 0) 100%
+          );
+          font-size: 12px;
+          font-weight: 700;
+          line-height: 32px;
+          color: #404040;
+          padding: 0 12px;
+          position: relative;
+          .tag {
+            font-size: 12px;
+            font-weight: 400;
+            line-height: 1;
+            color: #13c251;
+            padding: 1px 6px;
+            border: 1px solid #13c251;
+            border-radius: 2px;
+            margin-left: 8px;
+          }
+        }
+        .item-con {
+          display: flex;
+          align-items: center;
+          padding: 0 30px;
+          font-size: 12px;
+          font-weight: 400;
+          line-height: 16px;
+          color: #656565;
+          padding: 8px 12px 0 30px;
+          .value {
+            color: #333333;
+            font-weight: 700;
+          }
+        }
+        .iconimg {
+          width: 14px;
+          height: 14px;
+          background-image: url(../images/hmhn-01/icon-04.png);
+          margin-right: 4px;
+        }
+        .iconimg-arrow-right {
+          position: absolute;
+          top: 50%;
+          right: 0;
+          width: 12px;
+          height: 12px;
+          transform: translateY(-50%);
+          background-image: url(../images/hmhn-01/icon-arrow-right.png) !important;
+        }
+        &.item-1 {
+          .item-name {
+            background: linear-gradient(
+              90deg,
+              rgba(252, 102, 102, 0.05) 0%,
+              rgba(255, 255, 255, 0) 100%
+            );
+          }
+          .iconimg {
+            background-image: url(../images/hmhn-01/icon-05.png);
+          }
+        }
+        &.item-2 {
+          .item-name {
+            background: linear-gradient(
+              90deg,
+              rgba(253, 183, 26, 0.05) 0%,
+              rgba(255, 255, 255, 0) 100%
+            );
+          }
+          .iconimg {
+            background-image: url(../images/hmhn-01/icon-06.png);
+          }
+        }
+        &.item-3 {
+          .item-name {
+            background: linear-gradient(
+              90deg,
+              rgba(19, 194, 81, 0.05) 0%,
+              rgba(255, 255, 255, 0) 100%
+            );
+          }
+          .iconimg {
+            background-image: url(../images/hmhn-01/icon-01.png);
+          }
+        }
+        &.item-4 {
+          .item-name {
+            background: linear-gradient(
+              90deg,
+              rgba(156, 78, 222, 0.05) 0%,
+              rgba(255, 255, 255, 0) 100%
+            );
+          }
+          .iconimg {
+            background-image: url(../images/hmhn-01/icon-02.png);
+          }
+        }
+        &.item-5 {
+          .item-name {
+            background: linear-gradient(
+              90deg,
+              rgba(69, 173, 243, 0.05) 0%,
+              rgba(255, 255, 255, 0) 100%
+            );
+          }
+          .iconimg {
+            background-image: url(../images/hmhn-01/icon-03.png);
+          }
+        }
+      }
+    }
   }
 }

@@ -1,7 +1,7 @@
 .app {
   width: 100%;
-  @include minWidth($app-min-width);
-  @include minHeight(100%);
+  // @include minWidth($app-min-width);
+  // @include minHeight(100%);
   font-family: MicrosoftYaHei, sans-serif, Avenir, Helvetica, Arial;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

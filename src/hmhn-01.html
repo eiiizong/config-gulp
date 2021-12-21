@@ -76,6 +76,32 @@
           v-cloak
         >
           <div class="wrapper-title">大数据画像</div>
+          <div class="con">
+            <div class="circle">
+              <span class="c-0">中年人</span>
+              <span class="c-1">中年人</span>
+              <span class="c-2">中年人</span>
+              <span class="c-3">中年人</span>
+            </div>
+            <div class="items">
+              <div
+                class="item"
+                v-for="(item,index) in 6"
+                :class="['item-'+index]"
+              >
+                <div class="item-name">
+                  <i class="iconimg"></i>
+                  <div>房产数量</div>
+                  <div class="tag">有效期内</div>
+                  <i class="iconimg iconimg-arrow-right"></i>
+                </div>
+                <div class="item-con">
+                  <div class="key">房产数：</div>
+                  <div class="value">1</div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
       <div class="hnhm-wrapper">
