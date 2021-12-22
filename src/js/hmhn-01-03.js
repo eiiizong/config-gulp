@@ -59,6 +59,12 @@ var hnhm0103 = new Vue({
     // 初始化数据
     initData() {
       console.log('hnhm0101 initData')
+
+      let wrapper = document.querySelector('.scroll-wrapper',{
+        mouseWheel: true,
+        click: true,
+      })
+      let scroll = new BScroll(wrapper)
     },
   },
 })
