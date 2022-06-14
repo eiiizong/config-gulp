@@ -11,7 +11,7 @@
  *   }
  */
 @mixin opacity($opacity) {
-  opacity: $opacity / 100;
+  opacity: calc($opacity / 100);
   // setting.scss 中 $filter 为 true 才 渲染
   @if $filter {
     filter: alpha(opacity=$opacity); // 兼容ie
