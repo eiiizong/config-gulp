@@ -29,9 +29,8 @@ const compileScss = () => {
 
 // 启动服务
 const server = () => {
-  const rootSrc1 = resolve(__dirname, 'dist')
-  const rootSrc = resolve(__dirname, 'dist/swiper.html')
-  return src(rootSrc1).pipe(
+  const rootSrc = resolve(__dirname, 'dist')
+  return src(rootSrc).pipe(
     gulpWebserver({
       host: '127.0.0.1',
       livereload: true,
