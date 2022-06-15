@@ -5,6 +5,7 @@ const gulpSourcemaps = require('gulp-sourcemaps')
 const gulpCssnano = require('gulp-cssnano')
 const gulpAutoprefixer = require('gulp-autoprefixer')
 const gulpRename = require('gulp-rename')
+const gulpWebserver = require('gulp-webserver')
 
 // 编译scss文件
 const compileScss = () => {
@@ -26,9 +27,25 @@ const compileScss = () => {
     .pipe(dest(fileDest))
 }
 
+// 启动服务
+const server = () => {
+  const rootSrc1 = resolve(__dirname, 'dist')
+  const rootSrc = resolve(__dirname, 'dist/swiper.html')
+  return src(rootSrc1).pipe(
+    gulpWebserver({
+      host: '127.0.0.1',
+      livereload: true,
+      directoryListing: true,
+      open: true,
+      port: '8023',
+      fallback: 'index.html',
+    })
+  )
+}
+
 function defaultTask(cb) {
   // place code for your default task here
   cb()
 }
 
-exports.default = series(compileScss)
+exports.default = series(compileScss, server)
