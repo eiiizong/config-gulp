@@ -26,6 +26,7 @@
     <!-- 引入 js 文件 -->
     <script src="./lib/vue/dist/vue.min.js"></script>
     <script src="./lib/element-ui/lib/index.js"></script>
+    <script src="./lib/better-scroll/dist/better-scroll.min.js"></script>
   </head>
 
   <body>
@@ -37,7 +38,297 @@
         center
         width="80%"
       >
-        <div class="dialog-message_box"></div>
+        <div class="dialog-message_box">
+          <div class="dialog-message_box-left">
+            <div class="dialog-message_box-left-tool">
+              <img
+                src="https://img.js.design/assets/img/63560182a38f42339d7f41e9.png"
+                alt=""
+              />
+            </div>
+            <div class="dialog-message_box-left-tabs">
+              <div class="dialog-message_box-left-tab active">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  xmlns:xlink="http://www.w3.org/1999/xlink"
+                  width="25"
+                  height="25"
+                  viewBox="0 0 25 25"
+                  fill="none"
+                >
+                  <defs>
+                    <rect id="path_0" x="0" y="0" width="25" height="25" />
+                  </defs>
+                  <g
+                    opacity="1"
+                    transform="translate(0 0)  rotate(0 12.5 12.5)"
+                  >
+                    <mask id="bg-mask-0" fill="white">
+                      <use xlink:href="#path_0"></use>
+                    </mask>
+                    <g mask="url(#bg-mask-0)">
+                      <path
+                        id="路径 1"
+                        style="
+                          stroke: #ffffff;
+                          stroke-width: 1.3333333333333333;
+                          stroke-opacity: 1;
+                          stroke-dasharray: 0 0;
+                        "
+                        transform="translate(11.458333333333409 11.458333333333295)  rotate(0 5.729166666666667 4.947916666666667)"
+                        d="M11.46,0L7.29,0L7.29,4.17L0,4.17L0,8.33L5.73,8.33L7.29,9.9L8.85,8.33L11.46,8.33L11.46,0Z "
+                      />
+                      <path
+                        id="路径 2"
+                        style="
+                          stroke: #ffffff;
+                          stroke-width: 1.3333333333333333;
+                          stroke-opacity: 1;
+                          stroke-dasharray: 0 0;
+                        "
+                        transform="translate(2.083333333333409 3.125)  rotate(0 8.333333333333334 7.291666666666666)"
+                        d="M0,12.5L2.6,12.5L4.69,14.58L6.77,12.5L16.67,12.5L16.67,0L0,0L0,12.5Z "
+                      />
+                      <path
+                        id="路径 3"
+                        style="
+                          stroke: #ffffff;
+                          stroke-width: 1.3333333333333333;
+                          stroke-opacity: 1;
+                          stroke-dasharray: 0 0;
+                        "
+                        transform="translate(9.895833333333409 9.375)  rotate(0 0.2604166666666667 0.5208333333333334)"
+                        d="M0,0L0.52,0 "
+                      />
+                      <path
+                        id="路径 4"
+                        style="
+                          stroke: #ffffff;
+                          stroke-width: 1.3333333333333333;
+                          stroke-opacity: 1;
+                          stroke-dasharray: 0 0;
+                        "
+                        transform="translate(13.541666666666591 9.375)  rotate(0 0.2604166666666667 0.5208333333333334)"
+                        d="M0,0L0.52,0 "
+                      />
+                      <path
+                        id="路径 5"
+                        style="
+                          stroke: #ffffff;
+                          stroke-width: 1.3333333333333333;
+                          stroke-opacity: 1;
+                          stroke-dasharray: 0 0;
+                        "
+                        transform="translate(6.25 9.375)  rotate(0 0.2604166666666667 0.5208333333333334)"
+                        d="M0,0L0.52,0 "
+                      />
+                    </g>
+                  </g>
+                </svg>
+              </div>
+              <div class="dialog-message_box-left-tab">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  xmlns:xlink="http://www.w3.org/1999/xlink"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                >
+                  <defs>
+                    <rect id="path_0" x="0" y="0" width="24" height="24" />
+                  </defs>
+                  <g opacity="1" transform="translate(0 0)  rotate(0 12 12)">
+                    <mask id="bg-mask-0" fill="white">
+                      <use xlink:href="#path_0"></use>
+                    </mask>
+                    <g mask="url(#bg-mask-0)">
+                      <path
+                        id="路径 1"
+                        style="
+                          stroke: #ffffff;
+                          stroke-width: 1.3333333333333333;
+                          stroke-opacity: 1;
+                          stroke-dasharray: 0 0;
+                        "
+                        transform="translate(3.999999999999924 1.999999999999962)  rotate(0 8 10)"
+                        d="M0,16L0,20L16,20L16,0L0,0L0,4 "
+                      />
+                      <path
+                        id="路径 2"
+                        style="
+                          stroke: #ffffff;
+                          stroke-width: 1.3333333333333333;
+                          stroke-opacity: 1;
+                          stroke-dasharray: 0 0;
+                        "
+                        transform="translate(3 15)  rotate(0 1 0.5)"
+                        d="M0,0L2,0 "
+                      />
+                      <path
+                        id="路径 3"
+                        style="
+                          stroke: #ffffff;
+                          stroke-width: 1.3333333333333333;
+                          stroke-opacity: 1;
+                          stroke-dasharray: 0 0;
+                        "
+                        transform="translate(3 12)  rotate(0 1 0.5)"
+                        d="M0,0L2,0 "
+                      />
+                      <path
+                        id="路径 4"
+                        style="
+                          stroke: #ffffff;
+                          stroke-width: 1.3333333333333333;
+                          stroke-opacity: 1;
+                          stroke-dasharray: 0 0;
+                        "
+                        transform="translate(3 9)  rotate(0 1 0.5)"
+                        d="M0,0L2,0 "
+                      />
+                      <path
+                        id="路径 5"
+                        style="
+                          stroke: #ffffff;
+                          stroke-width: 1.3333333333333333;
+                          stroke-opacity: 1;
+                          stroke-dasharray: 0 0;
+                        "
+                        transform="translate(9.999999999999924 6.499999999999962)  rotate(0 2 2)"
+                        d="M2,0C0.9,0 0,0.9 0,2C0,3.1 0.9,4 2,4C3.1,4 4,3.1 4,2C4,0.9 3.1,0 2,0Z "
+                      />
+                      <path
+                        id="路径 6"
+                        style="
+                          stroke: #ffffff;
+                          stroke-width: 1.3333333333333333;
+                          stroke-opacity: 1;
+                          stroke-dasharray: 0 0;
+                        "
+                        transform="translate(8.000000000000075 13.5)  rotate(0 4 2)"
+                        d="M8,4C8,1.79 6.21,0 4,0C1.79,0 0,1.79 0,4 "
+                      />
+                    </g>
+                  </g>
+                </svg>
+              </div>
+            </div>
+          </div>
+          <div class="dialog-message_box-center">
+            <div class="dialog-message_box-center-search-wrapper">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink"
+                width="16"
+                height="16"
+                viewBox="0 0 16 16"
+                fill="none"
+              >
+                <defs>
+                  <path
+                    id="path_0"
+                    transform="translate(0 0) rotate(0 8 8)"
+                    d="M0,16L16,16L16,0L0,0L0,16Z"
+                  />
+                </defs>
+                <g opacity="1" transform="translate(0 0)  rotate(0 8 8)">
+                  <mask id="mask-0" fill="white">
+                    <use xlink:href="#path_0"></use>
+                  </mask>
+                  <g mask="url(#mask-0)"></g>
+                  <g mask="url(#mask-0)">
+                    <path
+                      id="椭圆 36"
+                      style="
+                        stroke: #bfbfbf;
+                        stroke-width: 2;
+                        stroke-opacity: 1;
+                        stroke-dasharray: 0 0;
+                      "
+                      transform="translate(0 0)  rotate(0 7 7)"
+                      d="M7,0C3.13,0 0,3.13 0,7C0,10.87 3.13,14 7,14C10.87,14 14,10.87 14,7C14,3.13 10.87,0 7,0Z "
+                    />
+                  </g>
+                  <g mask="url(#mask-0)">
+                    <rect
+                      id="矩形 455"
+                      style="
+                        stroke: #bfbfbf;
+                        stroke-width: 1;
+                        stroke-opacity: 1;
+                        stroke-dasharray: 0 0;
+                      "
+                      transform="translate(12.528340531027917 11.025183487209508)  rotate(-45 1 2.5)"
+                      x="0.5"
+                      y="0.5"
+                      rx="1.5"
+                      width="1"
+                      height="4"
+                    />
+                  </g>
+                </g>
+              </svg>
+              <input type="text" placeholder="请输入检索内容" />
+            </div>
+            <div class="dialog-message_box-center-message-list-wrapper">
+              <div class="dialog-message_box-center-message-list-name">
+                消息列表
+              </div>
+              <div
+                class="dialog-message_box-center-message-list-scroll-wrapper"
+                ref="ref_message_list"
+              >
+                <div class="dialog-message_box-center-message-list-items">
+                  <div
+                    class="dialog-message_box-center-message-list-item"
+                    v-for="item in 20"
+                  >
+                    <div
+                      class="dialog-message_box-center-message-list-item-logo"
+                    >
+                      <div class="logo-admin" v-if="false">
+                        <img
+                          src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACoAAAAqCAYAAADFw8lbAAAAAXNSR0IArs4c6QAAAARzQklUCAgICHwIZIgAAAFgSURBVFiF3ZlLFoMgDEVf2Jh0ZeLKpCtLB2KPtbUmkaDtnXGKcCXIJyUYYOYEoAMQVz9lAPe5QETJ0n4VmDmxjlRerLnoqBR9kW4lGQ9IzoyWvkkpypZOPpCJ6KZ5IEgrVg5bZOZYsb2JSiE/NAWkIxr1r1e3TXHoPdCE/1RRDVLRztVCwN+N6H2/ii8/M6KinanijrRGvEP9zIj+nWh26l/8kUrnaARgOp597ZxIfHoTjSgRZbPNNoNDm6YryFdcJB1ko6tokR0PSiZ3yYVsc0nrOpobP2eDjVeTppIL2bFV2AFj6Nn21R46fGt2JmC6kH3KOWmYF/qs2Ug2RYtcX4rRaiUgY9rzVeLzh6Kdf7WQJdROFFzzJksLyXOWj22GZX41ANXzSrXol16hFPrN6ufyXNKufhV5Zv0CLpAF2SECk2g8VWOfDrh+6IFyAQxoffQyQsDL/0ZXY3C6WPrxAKmo8WkBI+FwAAAAAElFTkSuQmCC"
+                          alt=""
+                        />
+                      </div>
+                      <div class="logo-task" v-if="false">
+                        <img
+                          src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAAAXNSR0IArs4c6QAAAARzQklUCAgICHwIZIgAAAF0SURBVGiB7ZnPTcMwFIc/V1Rs0Sl6owevwQCIbpGM0YoBWKOH9gRLwBaohceBWArBSRvbLxaqv1vz5/n3xYmd1FAoXDfGt1FEbFAxY3aXHBdS/9LaroFQzgYTkTpl/ZmngbMhBqgizg3ij0AkVkTqvp3NvqSSNymLNVQigjGmdhuaXrUo9JCGAPxIVMCu+W2V2lETcFjl+smfgckpArkpArnJLvD6/hV1vvYwOshmf2R7OAHwdH/LcjH+embrgXZ4ICg8ZBLohn+8C78RJhfwhV+v5sH1JhVIHR4iBMaOHhrhIWIUenj+uDiIVngI7IH21d8eTmz2x95jNcNDoMByMfs1cvRJaIeHiGdgvZoPSkwRHiJnYhfIBW0HniI8JHiVGJIA3fCQaB7o3k4O7fCQcCLrSkwR3ouI2Ih/zkRE5OXtM7ZEH7abV+VVIvTNMoTsHzSxFIHcFIHcFIHcFIHc/CsB30qld5kVohf7VBi11FooXAnfUMaoPVRbcaQAAAAASUVORK5CYII="
+                          alt=""
+                        />
+                      </div>
+                      <div class="logo-user" v-if="true">
+                        <img
+                          src="https://img.js.design/assets/img/63560182a38f42339d7f41e9.png"
+                          alt=""
+                        />
+                      </div>
+                      <div class="point"></div>
+                    </div>
+                    <div
+                      class="dialog-message_box-center-message-list-item-con"
+                    >
+                      <div
+                        class="dialog-message_box-center-message-list-item-con-name"
+                      >
+                        <span>管理员消息</span>
+                        <div class="time">11:06</div>
+                      </div>
+                      <div
+                        class="dialog-message_box-center-message-list-item-con-desc"
+                      >
+                        [5条]你登录的系统验证码你登录的系统验证码你登录的系统验证码
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="dialog-message_box-right"></div>
+        </div>
       </el-dialog>
     </div>
   </body>
