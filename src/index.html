@@ -47,7 +47,11 @@
               />
             </div>
             <div class="dialog-message_box-left-tabs">
-              <div class="dialog-message_box-left-tab active">
+              <div
+                class="dialog-message_box-left-tab"
+                :class="messageTabActive=='message'?'active':''"
+                @click.stop="messageTabActive='message'"
+              >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -126,7 +130,11 @@
                   </g>
                 </svg>
               </div>
-              <div class="dialog-message_box-left-tab">
+              <div
+                class="dialog-message_box-left-tab"
+                :class="messageTabActive=='mailList'?'active':''"
+                @click.stop="messageTabActive='mailList'"
+              >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -216,186 +224,208 @@
             </div>
           </div>
           <div class="dialog-message_box-center">
-            <div class="dialog-message_box-center-search-wrapper" v-if="false">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                xmlns:xlink="http://www.w3.org/1999/xlink"
-                width="16"
-                height="16"
-                viewBox="0 0 16 16"
-                fill="none"
-              >
-                <defs>
-                  <path
-                    id="path_0"
-                    transform="translate(0 0) rotate(0 8 8)"
-                    d="M0,16L16,16L16,0L0,0L0,16Z"
-                  />
-                </defs>
-                <g opacity="1" transform="translate(0 0)  rotate(0 8 8)">
-                  <mask id="mask-0" fill="white">
-                    <use xlink:href="#path_0"></use>
-                  </mask>
-                  <g mask="url(#mask-0)"></g>
-                  <g mask="url(#mask-0)">
-                    <path
-                      id="椭圆 36"
-                      style="
-                        stroke: #bfbfbf;
-                        stroke-width: 2;
-                        stroke-opacity: 1;
-                        stroke-dasharray: 0 0;
-                      "
-                      transform="translate(0 0)  rotate(0 7 7)"
-                      d="M7,0C3.13,0 0,3.13 0,7C0,10.87 3.13,14 7,14C10.87,14 14,10.87 14,7C14,3.13 10.87,0 7,0Z "
-                    />
-                  </g>
-                  <g mask="url(#mask-0)">
-                    <rect
-                      id="矩形 455"
-                      style="
-                        stroke: #bfbfbf;
-                        stroke-width: 1;
-                        stroke-opacity: 1;
-                        stroke-dasharray: 0 0;
-                      "
-                      transform="translate(12.528340531027917 11.025183487209508)  rotate(-45 1 2.5)"
-                      x="0.5"
-                      y="0.5"
-                      rx="1.5"
-                      width="1"
-                      height="4"
-                    />
-                  </g>
-                </g>
-              </svg>
-              <input type="text" placeholder="请输入检索内容" />
-            </div>
-            <div class="dialog-message_box-center-message-list-wrapper">
-              <div class="dialog-message_box-center-message-list-name">
-                消息列表
-              </div>
+            <template v-if="messageTabActive=='message'">
               <div
-                class="dialog-message_box-center-message-list-scroll-wrapper"
-                ref="ref_message_list"
+                class="dialog-message_box-center-search-wrapper"
+                v-if="false"
               >
-                <div class="dialog-message_box-center-message-list-items">
-                  <div
-                    class="dialog-message_box-center-message-list-item"
-                    v-for="item in 20"
-                  >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  xmlns:xlink="http://www.w3.org/1999/xlink"
+                  width="16"
+                  height="16"
+                  viewBox="0 0 16 16"
+                  fill="none"
+                >
+                  <defs>
+                    <path
+                      id="path_0"
+                      transform="translate(0 0) rotate(0 8 8)"
+                      d="M0,16L16,16L16,0L0,0L0,16Z"
+                    />
+                  </defs>
+                  <g opacity="1" transform="translate(0 0)  rotate(0 8 8)">
+                    <mask id="mask-0" fill="white">
+                      <use xlink:href="#path_0"></use>
+                    </mask>
+                    <g mask="url(#mask-0)"></g>
+                    <g mask="url(#mask-0)">
+                      <path
+                        id="椭圆 36"
+                        style="
+                          stroke: #bfbfbf;
+                          stroke-width: 2;
+                          stroke-opacity: 1;
+                          stroke-dasharray: 0 0;
+                        "
+                        transform="translate(0 0)  rotate(0 7 7)"
+                        d="M7,0C3.13,0 0,3.13 0,7C0,10.87 3.13,14 7,14C10.87,14 14,10.87 14,7C14,3.13 10.87,0 7,0Z "
+                      />
+                    </g>
+                    <g mask="url(#mask-0)">
+                      <rect
+                        id="矩形 455"
+                        style="
+                          stroke: #bfbfbf;
+                          stroke-width: 1;
+                          stroke-opacity: 1;
+                          stroke-dasharray: 0 0;
+                        "
+                        transform="translate(12.528340531027917 11.025183487209508)  rotate(-45 1 2.5)"
+                        x="0.5"
+                        y="0.5"
+                        rx="1.5"
+                        width="1"
+                        height="4"
+                      />
+                    </g>
+                  </g>
+                </svg>
+                <input type="text" placeholder="请输入检索内容" />
+              </div>
+              <div class="dialog-message_box-center-message-list-wrapper">
+                <div class="dialog-message_box-center-message-list-name">
+                  消息列表
+                </div>
+                <div
+                  class="dialog-message_box-center-message-list-scroll-wrapper"
+                  ref="ref_message_list"
+                >
+                  <div class="dialog-message_box-center-message-list-items">
                     <div
-                      class="dialog-message_box-center-message-list-item-logo"
-                    >
-                      <div class="logo-admin" v-if="false">
-                        <img
-                          src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACoAAAAqCAYAAADFw8lbAAAAAXNSR0IArs4c6QAAAARzQklUCAgICHwIZIgAAAFgSURBVFiF3ZlLFoMgDEVf2Jh0ZeLKpCtLB2KPtbUmkaDtnXGKcCXIJyUYYOYEoAMQVz9lAPe5QETJ0n4VmDmxjlRerLnoqBR9kW4lGQ9IzoyWvkkpypZOPpCJ6KZ5IEgrVg5bZOZYsb2JSiE/NAWkIxr1r1e3TXHoPdCE/1RRDVLRztVCwN+N6H2/ii8/M6KinanijrRGvEP9zIj+nWh26l/8kUrnaARgOp597ZxIfHoTjSgRZbPNNoNDm6YryFdcJB1ko6tokR0PSiZ3yYVsc0nrOpobP2eDjVeTppIL2bFV2AFj6Nn21R46fGt2JmC6kH3KOWmYF/qs2Ug2RYtcX4rRaiUgY9rzVeLzh6Kdf7WQJdROFFzzJksLyXOWj22GZX41ANXzSrXol16hFPrN6ufyXNKufhV5Zv0CLpAF2SECk2g8VWOfDrh+6IFyAQxoffQyQsDL/0ZXY3C6WPrxAKmo8WkBI+FwAAAAAElFTkSuQmCC"
-                          alt=""
-                        />
-                      </div>
-                      <div class="logo-task" v-if="false">
-                        <img
-                          src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAAAXNSR0IArs4c6QAAAARzQklUCAgICHwIZIgAAAF0SURBVGiB7ZnPTcMwFIc/V1Rs0Sl6owevwQCIbpGM0YoBWKOH9gRLwBaohceBWArBSRvbLxaqv1vz5/n3xYmd1FAoXDfGt1FEbFAxY3aXHBdS/9LaroFQzgYTkTpl/ZmngbMhBqgizg3ij0AkVkTqvp3NvqSSNymLNVQigjGmdhuaXrUo9JCGAPxIVMCu+W2V2lETcFjl+smfgckpArkpArnJLvD6/hV1vvYwOshmf2R7OAHwdH/LcjH+embrgXZ4ICg8ZBLohn+8C78RJhfwhV+v5sH1JhVIHR4iBMaOHhrhIWIUenj+uDiIVngI7IH21d8eTmz2x95jNcNDoMByMfs1cvRJaIeHiGdgvZoPSkwRHiJnYhfIBW0HniI8JHiVGJIA3fCQaB7o3k4O7fCQcCLrSkwR3ouI2Ih/zkRE5OXtM7ZEH7abV+VVIvTNMoTsHzSxFIHcFIHcFIHcFIHc/CsB30qld5kVohf7VBi11FooXAnfUMaoPVRbcaQAAAAASUVORK5CYII="
-                          alt=""
-                        />
-                      </div>
-                      <div class="logo-user" v-if="true">
-                        <img
-                          src="https://img.js.design/assets/img/63560182a38f42339d7f41e9.png"
-                          alt=""
-                        />
-                      </div>
-                      <div class="point"></div>
-                    </div>
-                    <div
-                      class="dialog-message_box-center-message-list-item-con"
+                      class="dialog-message_box-center-message-list-item"
+                      v-for="item in 20"
                     >
                       <div
-                        class="dialog-message_box-center-message-list-item-con-name"
+                        class="dialog-message_box-center-message-list-item-logo"
                       >
-                        <span>管理员消息</span>
-                        <div class="time">11:06</div>
+                        <div class="logo-admin" v-if="false">
+                          <img
+                            src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACoAAAAqCAYAAADFw8lbAAAAAXNSR0IArs4c6QAAAARzQklUCAgICHwIZIgAAAFgSURBVFiF3ZlLFoMgDEVf2Jh0ZeLKpCtLB2KPtbUmkaDtnXGKcCXIJyUYYOYEoAMQVz9lAPe5QETJ0n4VmDmxjlRerLnoqBR9kW4lGQ9IzoyWvkkpypZOPpCJ6KZ5IEgrVg5bZOZYsb2JSiE/NAWkIxr1r1e3TXHoPdCE/1RRDVLRztVCwN+N6H2/ii8/M6KinanijrRGvEP9zIj+nWh26l/8kUrnaARgOp597ZxIfHoTjSgRZbPNNoNDm6YryFdcJB1ko6tokR0PSiZ3yYVsc0nrOpobP2eDjVeTppIL2bFV2AFj6Nn21R46fGt2JmC6kH3KOWmYF/qs2Ug2RYtcX4rRaiUgY9rzVeLzh6Kdf7WQJdROFFzzJksLyXOWj22GZX41ANXzSrXol16hFPrN6ufyXNKufhV5Zv0CLpAF2SECk2g8VWOfDrh+6IFyAQxoffQyQsDL/0ZXY3C6WPrxAKmo8WkBI+FwAAAAAElFTkSuQmCC"
+                            alt=""
+                          />
+                        </div>
+                        <div class="logo-task" v-if="false">
+                          <img
+                            src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAAAXNSR0IArs4c6QAAAARzQklUCAgICHwIZIgAAAF0SURBVGiB7ZnPTcMwFIc/V1Rs0Sl6owevwQCIbpGM0YoBWKOH9gRLwBaohceBWArBSRvbLxaqv1vz5/n3xYmd1FAoXDfGt1FEbFAxY3aXHBdS/9LaroFQzgYTkTpl/ZmngbMhBqgizg3ij0AkVkTqvp3NvqSSNymLNVQigjGmdhuaXrUo9JCGAPxIVMCu+W2V2lETcFjl+smfgckpArkpArnJLvD6/hV1vvYwOshmf2R7OAHwdH/LcjH+embrgXZ4ICg8ZBLohn+8C78RJhfwhV+v5sH1JhVIHR4iBMaOHhrhIWIUenj+uDiIVngI7IH21d8eTmz2x95jNcNDoMByMfs1cvRJaIeHiGdgvZoPSkwRHiJnYhfIBW0HniI8JHiVGJIA3fCQaB7o3k4O7fCQcCLrSkwR3ouI2Ih/zkRE5OXtM7ZEH7abV+VVIvTNMoTsHzSxFIHcFIHcFIHcFIHc/CsB30qld5kVohf7VBi11FooXAnfUMaoPVRbcaQAAAAASUVORK5CYII="
+                            alt=""
+                          />
+                        </div>
+                        <div class="logo-user" v-if="true">
+                          <img
+                            src="https://img.js.design/assets/img/63560182a38f42339d7f41e9.png"
+                            alt=""
+                          />
+                        </div>
+                        <div class="point"></div>
                       </div>
                       <div
-                        class="dialog-message_box-center-message-list-item-con-desc"
+                        class="dialog-message_box-center-message-list-item-con"
                       >
-                        [5条]你登录的系统验证码你登录的系统验证码你登录的系统验证码
+                        <div
+                          class="dialog-message_box-center-message-list-item-con-name"
+                        >
+                          <span>管理员消息</span>
+                          <div class="time">11:06</div>
+                        </div>
+                        <div
+                          class="dialog-message_box-center-message-list-item-con-desc"
+                        >
+                          [5条]你登录的系统验证码你登录的系统验证码你登录的系统验证码
+                        </div>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
-            </div>
+            </template>
+            <template v-else>
+              <div class="dialog-message_box-center-message-list-wrapper">
+                <div class="dialog-message_box-center-message-list-name">
+                  组织架构
+                </div>
+
+                <div
+                  class="dialog-message_box-center-message-list-scroll-wrapper"
+                  ref="ref_message_list"
+                >
+                  <el-tree
+                    :data="mailListData"
+                    :props="mailListDataDefaultProps"
+                    @node-click="handleClickMailListNode"
+                  ></el-tree>
+                </div>
+              </div>
+            </template>
           </div>
           <div class="dialog-message_box-right">
-            <div class="dialog-message_box-right-tool">
-              <div class="left">
-                <div class="name">张三</div>
-                <div class="unit">（创新发展部-项目经理）</div>
-              </div>
-              <div class="right">
-                <span>联系方式：</span>
-                <span>1818923113</span>
-                <img
-                  src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARzQklUCAgICHwIZIgAAAEdSURBVFiF7Ve7DcIwEH2HaEgaRvEGmAkYAcYgFUmVjMEKTIDZwCOwARXQcRRxIIkI4swnBX5SFEvn83vyfWwD/w6SOqj8rEG8AqC9GJkzm8SplwBHvvUi7hAxlHledE2z8aDWAACiFQAPAUSTamiX0VTKrorTFq3QDaSLfBpBQBDQqAKVnzVw0fVsb4JVVYaqOB6aJmxsEi+8BdybzLPeVLfRuGWaq+I0t8tI1NzuISjb69tQ+XEtmV8PgXZ/49lkGABAmEn8ek/CIEB4Gr4CGt/yoRumGvSzA8y7aviFHcDefR3klNkkMl8VICnj3pMwCAgCHlWBdrfXHwtgztx9HfB99QAAUyaZfguBTeIUzCLnFkz54hmZN9b4Q1wB0lRSmu5whf8AAAAASUVORK5CYII="
-                  alt=""
-                />
-              </div>
-            </div>
-            <div
-              class="dialog-message_box-right-scroll-wrapper"
-              ref="ref_message_content_list"
-            >
-              <div class="dialog-message_box-right-message-items">
-                <div
-                  class="dialog-message_box-right-message-item"
-                  :class="index%2==0?'dialogue-align-l':'dialogue-align-r'"
-                  v-for="(item,index) in 20"
-                >
-                  <img
-                    class="dialogue-avatar"
-                    src="https://img.js.design/assets/img/63560182a38f42339d7f41e9.png"
-                    alt=""
-                  />
-
-                  <div class="dialogue-con">
-                    <!-- 文本 -->
-                    <div class="dialogue-con-text" v-if="true">
-                      测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据
-                    </div>
-                    <!-- 图片 -->
-                    <img
-                      class="dialogue-con-img"
-                      src="https://img1.baidu.com/it/u=3009731526,373851691&fm=253&fmt=auto&app=138&f=JPEG?w=800&h=500"
-                      alt=""
-                      v-if="false"
-                    />
-                    <!-- 文件 -->
-                    <div class="dialogue-con-files" v-if="false">
-                      <span>哈哈哈我是文件名.file</span>
-                      <img
-                        src="data:image/png;base64,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"
-                        alt=""
-                      />
-                    </div>
-                  </div>
-
-                  <div class="dialogue-time">2022-10-28 09:22:04</div>
+            <template v-if="messageTabActive=='message'">
+              <div class="dialog-message_box-right-tool">
+                <div class="left">
+                  <div class="name">张三</div>
+                  <div class="unit">（创新发展部-项目经理）</div>
+                </div>
+                <div class="right">
+                  <span>联系方式：</span>
+                  <span>1818923113</span>
                 </div>
               </div>
-            </div>
-            <div class="dialog-message_box-right-input-message">
-              <div class="dialog-message_box-right-input-message-tool">
-                <img
-                  src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAAAXNSR0IArs4c6QAABCFJREFUeF7tm1vIVUUYhh9JQiIR0zDxThIFRRDNI6h1YXmjIIoHKPCseAb1QrEMAykTQcVERVQExSslqLTQDh4KySTLPIIoIYEnPOCVGK+sLbPH2WuvtWfW/pf888Hm36w13zvf966Z+Wb/8642tHJr08rzJxIQR0ArZyBOgVY+AOIimHcKvAIMTD7vAN1yjKB7wE/AmeTzMIdvYU2zEtAD+BwYCXQMEM0VYCHwbQAsL4gsBEwE9nv1UttZJGwqCDsTbD0CjiVPPRNYCzb6DzgH/AVcBi4BP2SJJ42AC0DPLCAlbbMTmF4vtloEaL4vdzhfA74CzgO/AzfrdWDcfwMYDawHuuTw82l6C5gCfF8LxEXAMOC4w2EXMB945BMRMAnY54mR130qoPhfMBcBh4AxVstfgOF5e01pfwoYbN3/0QP/daAv8GoKRmfgtn3fJkB1XgtKJ6OhhpHWgjseAdquK4HPrIsfA2s8+lDy/YHVwKgaI1gjocpsAgYAp602y4AvPQJzufYC/rFu/AyMCNTPBOCAA2sesMW8bhMwE9hmOb4PHAkUmAlzFHjXwu2dLLAhupsNbLWA/gb6pBGwG/jIcnormRYhgjIx5iQVxby2CNgYsKNvkspjQr4NXK1csEeAa+NTb7PUaLztgMeW87/JPNY6FMIWOAj9ENhbBgIUw0FgrJXpYeBXwKcqmJB6qKZpDdBa8MxacgSo/0GAFr+08hViJJgYIvb52tPSBCgwla1PQmeZglc6AhTrDGB7k0goJQHKXZuYWcmnSC5KS0Al6a4JGdqUhTB7epWegBBJmxhPLcBIQNmqQOgnbuPFERCnQDUDcQ2Ia0DJtsJxESyYgVgFYhWIVaCKgVgGYxmMZbBc/xIruApSaBkcAiwBdBKT1XSqPA34M6uDZ7tCCdDxU57kK7nonNE8f/TMMdW9UAJs8DyJ9APO5nFosG2hBKwDljYQmERSEl41wwolQAmMA3QEldWkMvkU0N9mWOEENCMJnz5yEeA6q2sPlELU2AALiv2+5fe1qYCxj8Y0nzWvTZNm6GQDnZfBRcJO+3B0lalOsQlwOcx1CA3KkFyWGCTqsoWYVYIPm4AOgDRBbQ10HVVrw/MymqS4HxiBPwHeBO5WrrnEDyeAoVa2OwDJZ14mcylQpE6rys1FQC0d3+QCNcOhiZXIU2JP2yTU/M68WEv+IiGjiLBtTyKi0j7+QeioPfEqWkFJ7d5zYK0A1trX0/Q/UoS+lhLUxZxSWc/8Ut01r6Uwq2V6V8Ep808jQC9G/FZk1E3Ervm7I4sCbAOwuInBhuxKImmXavR5H1kIUOPxyaLSPWR0BWLdAL4ANtfrIysBwtG20nxfSN/zvDNULxaf+9cThbv2LPqJ/UfW7XseAnwCLK1vJKC0j6ZJgf0PHPHWQXMtQ18AAAAASUVORK5CYII="
-                  alt=""
-                />
+              <div
+                class="dialog-message_box-right-scroll-wrapper"
+                ref="ref_message_content_list"
+              >
+                <div class="dialog-message_box-right-message-items">
+                  <div
+                    class="dialog-message_box-right-message-item"
+                    :class="index%2==0?'dialogue-align-l':'dialogue-align-r'"
+                    v-for="(item,index) in 20"
+                  >
+                    <img
+                      class="dialogue-avatar"
+                      src="https://img.js.design/assets/img/63560182a38f42339d7f41e9.png"
+                      alt=""
+                    />
+
+                    <div class="dialogue-con">
+                      <!-- 文本 -->
+                      <div class="dialogue-con-text" v-if="true">
+                        测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据
+                      </div>
+                      <!-- 图片 -->
+                      <img
+                        class="dialogue-con-img"
+                        src="https://img1.baidu.com/it/u=3009731526,373851691&fm=253&fmt=auto&app=138&f=JPEG?w=800&h=500"
+                        alt=""
+                        v-if="false"
+                      />
+                      <!-- 文件 -->
+                      <div class="dialogue-con-files" v-if="false">
+                        <span>哈哈哈我是文件名.file</span>
+                        <img
+                          src="data:image/png;base64,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"
+                          alt=""
+                        />
+                      </div>
+                    </div>
+
+                    <div class="dialogue-time">2022-10-28 09:22:04</div>
+                  </div>
+                </div>
               </div>
-              <div class="dialog-message_box-right-input-message-textarea">
-                <textarea placeholder="想说点什么呢。。。"></textarea>
-                <!-- <input type="textarea" placeholder="想说点什么呢。。。" /> -->
+              <div class="dialog-message_box-right-input-message">
+                <div class="dialog-message_box-right-input-message-tool">
+                  <img
+                    src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAAAXNSR0IArs4c6QAABCFJREFUeF7tm1vIVUUYhh9JQiIR0zDxThIFRRDNI6h1YXmjIIoHKPCseAb1QrEMAykTQcVERVQExSslqLTQDh4KySTLPIIoIYEnPOCVGK+sLbPH2WuvtWfW/pf888Hm36w13zvf966Z+Wb/8642tHJr08rzJxIQR0ArZyBOgVY+AOIimHcKvAIMTD7vAN1yjKB7wE/AmeTzMIdvYU2zEtAD+BwYCXQMEM0VYCHwbQAsL4gsBEwE9nv1UttZJGwqCDsTbD0CjiVPPRNYCzb6DzgH/AVcBi4BP2SJJ42AC0DPLCAlbbMTmF4vtloEaL4vdzhfA74CzgO/AzfrdWDcfwMYDawHuuTw82l6C5gCfF8LxEXAMOC4w2EXMB945BMRMAnY54mR130qoPhfMBcBh4AxVstfgOF5e01pfwoYbN3/0QP/daAv8GoKRmfgtn3fJkB1XgtKJ6OhhpHWgjseAdquK4HPrIsfA2s8+lDy/YHVwKgaI1gjocpsAgYAp602y4AvPQJzufYC/rFu/AyMCNTPBOCAA2sesMW8bhMwE9hmOb4PHAkUmAlzFHjXwu2dLLAhupsNbLWA/gb6pBGwG/jIcnormRYhgjIx5iQVxby2CNgYsKNvkspjQr4NXK1csEeAa+NTb7PUaLztgMeW87/JPNY6FMIWOAj9ENhbBgIUw0FgrJXpYeBXwKcqmJB6qKZpDdBa8MxacgSo/0GAFr+08hViJJgYIvb52tPSBCgwla1PQmeZglc6AhTrDGB7k0goJQHKXZuYWcmnSC5KS0Al6a4JGdqUhTB7epWegBBJmxhPLcBIQNmqQOgnbuPFERCnQDUDcQ2Ia0DJtsJxESyYgVgFYhWIVaCKgVgGYxmMZbBc/xIruApSaBkcAiwBdBKT1XSqPA34M6uDZ7tCCdDxU57kK7nonNE8f/TMMdW9UAJs8DyJ9APO5nFosG2hBKwDljYQmERSEl41wwolQAmMA3QEldWkMvkU0N9mWOEENCMJnz5yEeA6q2sPlELU2AALiv2+5fe1qYCxj8Y0nzWvTZNm6GQDnZfBRcJO+3B0lalOsQlwOcx1CA3KkFyWGCTqsoWYVYIPm4AOgDRBbQ10HVVrw/MymqS4HxiBPwHeBO5WrrnEDyeAoVa2OwDJZ14mcylQpE6rys1FQC0d3+QCNcOhiZXIU2JP2yTU/M68WEv+IiGjiLBtTyKi0j7+QeioPfEqWkFJ7d5zYK0A1trX0/Q/UoS+lhLUxZxSWc/8Ut01r6Uwq2V6V8Ep808jQC9G/FZk1E3Ervm7I4sCbAOwuInBhuxKImmXavR5H1kIUOPxyaLSPWR0BWLdAL4ANtfrIysBwtG20nxfSN/zvDNULxaf+9cThbv2LPqJ/UfW7XseAnwCLK1vJKC0j6ZJgf0PHPHWQXMtQ18AAAAASUVORK5CYII="
+                    alt=""
+                  />
+                </div>
+                <div class="dialog-message_box-right-input-message-textarea">
+                  <textarea placeholder="想说点什么呢。。。"></textarea>
+                  <!-- <input type="textarea" placeholder="想说点什么呢。。。" /> -->
+                </div>
               </div>
-            </div>
+            </template>
+            <template v-else> </template>
           </div>
         </div>
       </el-dialog>
