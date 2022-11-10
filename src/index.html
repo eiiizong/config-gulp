@@ -17,68 +17,30 @@
     <!-- 控制状态栏显示样式 -->
     <meta name="apple-mobile-web-app-status-bar-style" content="black" />
 
-    <title>banner</title>
+    <title>通讯录</title>
 
-    <!-- swiper css -->
-    <link rel="stylesheet" href="./lib/swiper/css/swiper.css" />
+    <!-- 引入element ui 样式 -->
+    <link rel="stylesheet" href="./lib/element-ui/theme-chalk/index.css" />
     <!-- 引入最终生成编译的css -->
     <link rel="stylesheet" href="./css/index.min.css" />
-
-    <!--[if lt IE 9]>
-      <script src="https://cdn.bootcdn.net/ajax/libs/respond.js/1.4.2/respond.min.js"></script>
-      <script src="https://cdn.bootcdn.net/ajax/libs/html5shiv/r29/html5.min.js"></script>
-    <![endif]-->
+    <!-- 引入 js 文件 -->
+    <script src="./lib/vue/dist/vue.min.js"></script>
+    <script src="./lib/element-ui/lib/index.js"></script>
   </head>
 
   <body>
-    <div class="ez-swiper">
-      <div class="swiper-container">
-        <div class="swiper-wrapper">
-          <div class="swiper-slide">
-            <div class="swiper-slide-bg">
-              <img src="./images/banner/01.png" alt="" />
-            </div>
-            <div class="swiper-slide-con">内容1</div>
-          </div>
-          <div class="swiper-slide">
-            <div class="swiper-slide-bg">
-              <img src="./images/banner/02.png" alt="" />
-            </div>
-            <div class="swiper-slide-con">内容2</div>
-          </div>
-          <div class="swiper-slide">
-            <div class="swiper-slide-bg">
-              <img src="./images/banner/03.png" alt="" />
-            </div>
-            <div class="swiper-slide-con">内容3</div>
-          </div>
-        </div>
-      </div>
+    <div class="app" id="app">
+      <el-dialog
+        :visible.sync="dialogVisibleMessage"
+        custom-class="dialog-message"
+        :close-on-click-modal="false"
+        center
+        width="80%"
+      >
+        <div class="dialog-message_box"></div>
+      </el-dialog>
     </div>
   </body>
-  <!-- 引入 js 文件 -->
-  <script src="./lib/swiper/js/swiper.min.js"></script>
-  <script src="./lib/jquery/jquery.min.js"></script>
-  <script>
-    $(function () {
-      var renderSwiper = function () {
-        var mySwiper = new Swiper('.swiper-container', {
-          direction: 'horizontal', // 切换选项 垂直 vertical 水平 horizontal
-          speed: 500, // 切换速度，即slider自动滑动开始到结束的时间（单位ms），也是触摸滑动时释放至贴合的时间。
-          loop: true, // 循环模式选项
-          autoplay: true, // 自动切换
-          keyboard: true, // 设置开启键盘来控制Swiper切换。
-          mousewheel: true, // 开启鼠标滚轮控制Swiper切换。可设置鼠标选项，或true使用默认值。
-          delay: 3000, // 自动切换的时间间隔，单位ms
-          effect: 'slide', //  slide的切换效果，默认为"slide"（位移切换），可设置为'slide'（普通切换、默认）,"fade"（淡入）"cube"（方块）"coverflow"（3d流）"flip"（3d翻转）。
-          slidesPerView: 1, // 设置slider容器能够同时显示的slides数量(carousel模式)。
-          autoHeight: true, // 自动高度。设置为true时，wrapper和container会随着当前slide的高度而发生变化。
-        })
-      }
-      var init = function () {
-        renderSwiper()
-      }
-      init()
-    })
-  </script>
+
+  <script src="./js/index.js"></script>
 </html>

@@ -1,0 +1,10 @@
+[v-cloak] {
+  display: none;
+}
+
+.dialog-message {
+  font-size: 14px;
+  &_box {
+    display: block;
+  }
+}

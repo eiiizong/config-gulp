@@ -1,0 +1,21 @@
+html,
+body {
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+}
+.app {
+  display: flex;
+  height: 100vh;
+  padding-bottom: 0;
+  .map-wrapper {
+    flex: 1;
+    overflow: hidden;
+    height: 100%;
+  }
+  .map {
+    height: 100%;
+    background-color: #f0f;
+  }
+}
