@@ -347,7 +347,7 @@
 
                 <div
                   class="dialog-message_box-center-message-list-scroll-wrapper"
-                  ref="ref_message_list"
+                  ref="ref_mail_list"
                 >
                   <el-tree
                     :data="mailListData"
@@ -425,7 +425,58 @@
                 </div>
               </div>
             </template>
-            <template v-else> </template>
+            <template v-else>
+              <div class="dialog-message_box-right-tool">
+                <div class="left">
+                  <div class="name">业务部（10人）</div>
+                </div>
+              </div>
+              <div class="dialog-message_box-right-table">
+                <el-table
+                  :data="tableData"
+                  style="width: 100%"
+                  max-height="505"
+                >
+                  <el-table-column
+                    type="index"
+                    align="center"
+                    label="序号"
+                    width="80"
+                  >
+                  </el-table-column>
+                  <el-table-column prop="name" label="成员" align="center">
+                  </el-table-column>
+                  <el-table-column
+                    prop="address"
+                    align="center"
+                    width="120"
+                    label="部门"
+                  >
+                  </el-table-column>
+                  <el-table-column
+                    prop="address"
+                    align="center"
+                    label="联系方式"
+                    width="100"
+                  >
+                  </el-table-column>
+                  <el-table-column
+                    fixed="right"
+                    align="center"
+                    label="操作"
+                    width="100"
+                  >
+                    <template slot-scope="scope">
+                      <el-button
+                        @click="handleClickTableCell(scope.row)"
+                        type="text"
+                        >发送消息</el-button
+                      >
+                    </template>
+                  </el-table-column>
+                </el-table>
+              </div>
+            </template>
           </div>
         </div>
       </el-dialog>
