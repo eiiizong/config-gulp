@@ -8,11 +8,6 @@
   background-color: $app-background-color;
   position: relative;
   overflow: auto;
-  padding-top: $app-nav-height + $app-toolbar-height;
-  padding-bottom: $app-footer-height;
-  &.ss {
-    background-color: #f5f5f5;
-  }
 }
 // 配合 v-cloak 指令使用 可以隐藏未编译的 Mustache 标签直到实例准备完毕。
 [v-cloak] {
