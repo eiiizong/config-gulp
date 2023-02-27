@@ -44,6 +44,7 @@
       position: absolute;
       bottom: 86px;
       left: 403px;
+      z-index: 2;
       .map-bg {
         width: 1151px;
       }
@@ -52,6 +53,123 @@
         position: absolute;
         top: 36px;
         left: 311px;
+      }
+    }
+    .arrows {
+      width: 1128px;
+      height: 180px;
+      position: absolute;
+      left: 381px;
+      bottom: 159px;
+      z-index: 1;
+      .arrow {
+        width: 82px;
+        position: absolute;
+        &:nth-of-type(1) {
+          top: 0;
+          left: 0;
+        }
+        &:nth-of-type(2) {
+          top: 15px;
+          left: 547px;
+        }
+        &:nth-of-type(3) {
+          top: 0;
+          right: 0;
+        }
+      }
+    }
+    .citys {
+      .city {
+        position: absolute;
+        font-size: 24px;
+        line-height: 31px;
+        color: #a6a6a6;
+        cursor: pointer;
+        &.dazhou {
+          top: 146px;
+          left: 108px;
+        }
+        &.yaan {
+          top: 189px;
+          left: 286px;
+        }
+        &.suining {
+          top: 139px;
+          left: 340px;
+        }
+        &.neijiang {
+          top: 183px;
+          left: 460px;
+        }
+        &.zigong {
+          top: 101px;
+          left: 473px;
+        }
+        &.ganzi {
+          top: 259px;
+          left: 538px;
+        }
+        &.chengdu {
+          top: 152px;
+          left: 588px;
+        }
+        &.leshan {
+          top: 196px;
+          left: 732px;
+        }
+        &.luzhou {
+          top: 238px;
+          left: 780px;
+        }
+        &.aba {
+          top: 283px;
+          left: 868px;
+        }
+        &.nanchong {
+          top: 221px;
+          left: 956px;
+        }
+        &.deyang {
+          top: 237px;
+          left: 1088px;
+        }
+        &.meshan {
+          top: 196px;
+          left: 1161px;
+        }
+        &.liangshan {
+          top: 251px;
+          left: 1221px;
+        }
+        &.yibin {
+          top: 176px;
+          left: 1368px;
+        }
+        &.mianyang {
+          top: 196px;
+          left: 1456px;
+        }
+        &.guangan {
+          top: 140px;
+          left: 1527px;
+        }
+        &.bazhong {
+          top: 193px;
+          left: 1575px;
+        }
+        &.guangyuan {
+          top: 107px;
+          left: 1597px;
+        }
+        &.ziyang {
+          top: 178px;
+          left: 1693px;
+        }
+        &.panzhihua {
+          top: 146px;
+          left: 1801px;
+        }
       }
     }
   }
