@@ -61,9 +61,13 @@ $rate: 1.7979;
 }
 .center {
   width: 100%;
-  height: 500px;
+  height: 600px;
   position: relative;
   .bg {
+    position: absolute;
+    top: 380px;
+    left: 50%;
+    transform: translateX(-50%);
     img {
       position: absolute;
       top: 0;
@@ -83,9 +87,49 @@ $rate: 1.7979;
       width: 1601px;
     }
   }
+  .con {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    .logo-wrapper {
+      position: absolute;
+      top: calc(98px / $rate);
+      left: 50%;
+      transform: translateX(-50%);
+      .logo-bg {
+        width: 423px;
+        margin: 0 auto;
+      }
+      .logo-light {
+        width: 620px;
+        max-width: 1204px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin-top: -340px;
+        margin-left: -316px;
+        animation: rota 4s linear infinite;
+      }
+      .logo {
+        width: 124px;
+        position: absolute;
+        top: 52px;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+      .logo-text {
+        width: 240px;
+        position: absolute;
+        top: 150px;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+    }
+  }
 }
 
 .footer {
+  display: none;
   width: 100%;
   height: 442px;
   background: url(../images/ygdzyktjgpt02/bg-footer.png) no-repeat center center;
