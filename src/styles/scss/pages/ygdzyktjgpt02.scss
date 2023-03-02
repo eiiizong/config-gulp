@@ -1,6 +1,6 @@
 body {
-  background: url(../images/ygdzyktjgpt02/bg.png) no-repeat center center;
-  background-size: cover;
+  min-height: 100%;
+  background-color: #041a4c;
 }
 [v-cloak] {
   display: none;
@@ -28,6 +28,8 @@ $rate: 1.7979;
   left: 0;
   width: 100%;
   z-index: 2;
+  background: url(../images/ygdzyktjgpt02/bg.png) no-repeat center center;
+  background-size: cover;
 }
 @keyframes rota {
   0% {
