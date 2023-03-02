@@ -5,6 +5,7 @@ body {
 [v-cloak] {
   display: none;
 }
+$rate: 1.7979;
 .app {
   width: 1920px;
   height: 1080px;
@@ -13,6 +14,20 @@ body {
   font-size: 16px;
   color: #fff;
   background-color: transparent;
+}
+.bg {
+  position: absolute;
+  top: -34px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 1431px;
+}
+.con {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 2;
 }
 @keyframes rota {
   0% {
@@ -39,17 +54,44 @@ body {
     text-align: center;
     color: #fff;
     font-weight: 700;
-    font-size: 78px;
-    padding-top: 138px;
+    font-size: calc(78px / $rate);
+    padding-top: 78px;
     line-height: 1;
   }
 }
+.center {
+  width: 100%;
+  height: 500px;
+  position: relative;
+  .bg {
+    img {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    .c-01 {
+      width: 965px;
+    }
+    .c-02 {
+      width: 1113px;
+    }
+    .c-03 {
+      width: 1513px;
+    }
+    .c-04 {
+      width: 1601px;
+    }
+  }
+}
+
 .footer {
   width: 100%;
   height: 442px;
   background: url(../images/ygdzyktjgpt02/bg-footer.png) no-repeat center center;
   background-size: 2251px 442px;
   position: relative;
+  background-color: rgba(0, 0, 0, 0.7);
   .map-wrapper {
     position: absolute;
     top: 50%;
@@ -64,6 +106,46 @@ body {
     font-weight: 500;
     line-height: 1;
     padding-top: 36px;
+    z-index: 2;
+  }
+  .arrow-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 1;
+    img {
+      width: 240px;
+      &:nth-of-type(2) {
+        width: 343px;
+        margin: 0 46px;
+      }
+    }
+  }
+  .items {
+    width: 100%;
+    .item {
+      width: 294px;
+      height: 282px;
+      background: url(../images/ygdzyktjgpt02/bg-item.png) no-repeat center center;
+      background-size: cover;
+      background-color: #f0f;
+      .col {
+        .key {
+          width: 100%;
+          text-align: center;
+          font-weight: 700;
+          color: #fff;
+        }
+        .value {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          .val {
+          }
+        }
+      }
+    }
   }
 }
 .main {
