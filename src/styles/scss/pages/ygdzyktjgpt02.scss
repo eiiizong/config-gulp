@@ -207,14 +207,14 @@ $rate: 1.7979;
         }
         &:nth-of-type(2) {
           top: 400px;
-          left: 680px;
+          left: 616px;
         }
         &:nth-of-type(3) {
           top: 400px;
           left: 1280px;
         }
         &:nth-of-type(4) {
-          top: 310px;
+          top: 300px;
           left: 1580px;
         }
       }
@@ -246,28 +246,90 @@ $rate: 1.7979;
     }
     .items02 {
       width: 100%;
+      position: absolute;
+
       .item02 {
-        display: none;
         width: 294px;
-        height: 282px;
-        background: url(../images/ygdzyktjgpt02/bg-item.png) no-repeat center center;
-        background-size: cover;
-        background-color: #f0f;
+        height: 282px + 28px;
+        background: url(../images/ygdzyktjgpt02/bg-item.png) no-repeat left bottom;
+        background-size: 294px 282px;
         position: absolute;
+
         .col {
           .key {
             width: 100%;
             text-align: center;
             font-weight: 700;
             color: #fff;
+            font-size: calc(48px / $rate);
+            font-weight: 700;
           }
           .value {
             display: flex;
             justify-content: center;
             align-items: center;
+            color: #ffed45;
+            padding-top: calc(30px / $rate);
             .val {
+              font-weight: 700;
+              font-size: calc(64px / $rate);
+              line-height: 1;
+            }
+            .point {
+              font-size: calc(40px / $rate);
+              line-height: 1;
+              font-weight: 700;
+              padding-top: 6px;
+              padding-right: 4px;
+            }
+            .unit {
+              font-size: calc(36px / $rate);
+              line-height: 1;
+              color: #fff;
+              padding-top: 8px;
             }
           }
+        }
+        .wrapper {
+          display: flex;
+          align-items: center;
+          flex-wrap: wrap;
+          padding-top: calc(100px / $rate);
+          .cell {
+            width: 50%;
+            padding-bottom: calc(40px / $rate);
+            .key {
+              text-align: center;
+              font-size: calc(42px / $rate);
+              color: #fff;
+            }
+            .value {
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              font-size: calc(42px / $rate);
+              color: #15ffff;
+            }
+            &.w100 {
+              width: 100%;
+            }
+          }
+        }
+        &:nth-of-type(1) {
+          top: 360px;
+          left: 60px;
+        }
+        &:nth-of-type(2) {
+          top: 500px;
+          left: 560px;
+        }
+        &:nth-of-type(3) {
+          top: 500px;
+          left: 1060px;
+        }
+        &:nth-of-type(4) {
+          top: 360px;
+          left: 1580px;
         }
       }
     }
@@ -299,476 +361,5 @@ $rate: 1.7979;
     line-height: 1;
     padding-top: 36px;
     z-index: 2;
-  }
-}
-.main {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-  .header {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding-top: 54px;
-    .img {
-      width: 1145px;
-    }
-  }
-  .center {
-    width: 100%;
-    padding-top: 10px;
-    position: relative;
-    height: 560px;
-    .logo-wrapper {
-      width: 602px;
-      height: 602px;
-      position: absolute;
-      top: 0;
-      left: 50%;
-      transform: translateX(-50%);
-      .logo-bg {
-        width: 100%;
-        height: 100%;
-        position: relative;
-        .img {
-          position: absolute;
-          width: 400px;
-          left: 50%;
-          top: 0;
-          margin-left: -200px;
-          &.img-light {
-            top: -117px;
-            left: 15px;
-            width: 100%;
-            margin-left: 0;
-            animation: rota 6s linear infinite;
-          }
-        }
-      }
-      .logo-con {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        padding-top: 61px;
-        .img-logo {
-          width: 119px;
-          margin: 0 auto;
-        }
-        .img-text {
-          width: 233px;
-          margin: 13px auto 0;
-        }
-      }
-    }
-    .circle-one {
-      position: absolute;
-      width: 1023px;
-      top: 276px;
-      left: 50%;
-      transform: translateX(-50%);
-      z-index: 2;
-      .bg {
-        width: 1023px;
-        height: 131px;
-      }
-      .con {
-        .item {
-          position: absolute;
-          .text {
-            font-size: 32px;
-            line-height: 40px;
-            font-weight: 700;
-            text-align: center;
-            color: #00d5e4;
-          }
-          .img {
-            width: 128px;
-          }
-          &:nth-of-type(1) {
-            top: -8px;
-            left: 107px;
-          }
-          &:nth-of-type(2) {
-            top: 22px;
-            left: 447px;
-          }
-          &:nth-of-type(3) {
-            top: -8px;
-            left: 806px;
-          }
-        }
-      }
-      .img-text-sgk {
-        position: absolute;
-        top: 72px;
-        left: 424px;
-        width: 179px;
-      }
-    }
-    .circle-two {
-      position: absolute;
-      width: 1537px;
-      height: 286px;
-      top: 256px;
-      left: 50%;
-      transform: translateX(-50%);
-      z-index: 1;
-      .con {
-        .item {
-          position: absolute;
-          color: #f29e9c;
-          white-space: nowrap;
-          .value-wrapper {
-            color: #fff;
-            display: flex;
-            align-items: flex-end;
-            .value {
-              font-size: 50px;
-              line-height: 64px;
-              font-weight: 500;
-            }
-            .value-unit {
-              padding-right: 3px;
-            }
-            .unit {
-              font-size: 24px;
-              line-height: 31px;
-              padding-bottom: 6px;
-            }
-          }
-          .key {
-            font-size: 26px;
-            text-align: center;
-            font-weight: 700;
-            color: inherit;
-            line-height: 1;
-            padding-bottom: 7px;
-          }
-          .img {
-            width: 26px;
-            margin: 0 auto;
-          }
-          &:nth-of-type(1) {
-            width: 140px;
-            top: 53px;
-            left: 65px;
-          }
-          &:nth-of-type(2) {
-            width: 170px;
-            top: 118px;
-            left: 408px;
-            color: #f8bc82;
-          }
-          &:nth-of-type(3) {
-            width: 172px;
-            top: 115px;
-            left: 970px;
-            color: #f2dd9c;
-          }
-          &:nth-of-type(4) {
-            width: 182px;
-            top: 40px;
-            left: 1370px;
-            color: #99f5a4;
-          }
-        }
-      }
-      .con-02 {
-        .item {
-          position: absolute;
-          color: #fadbda;
-          white-space: nowrap;
-          font-size: 24px;
-          line-height: 32px;
-          .value {
-            color: inherit;
-            display: flex;
-            align-items: flex-end;
-            .val {
-              font-size: 32px;
-              line-height: 40px;
-            }
-            .unit {
-              padding-bottom: 4px;
-            }
-          }
-          .point {
-            width: 8px;
-            height: 8px;
-            border-radius: 50%;
-            background-color: #27a7e2;
-          }
-          &:nth-of-type(1) {
-            text-align: center;
-            top: 77px;
-            left: 20px;
-            transform: translateX(-100%);
-            display: flex;
-            align-items: center;
-            .point {
-              margin-left: 20px;
-            }
-          }
-          &:nth-of-type(2) {
-            text-align: center;
-            top: 155px;
-            left: 12px;
-            transform: translateX(-100%);
-            display: flex;
-            align-items: center;
-            padding-right: 20px;
-            .point {
-              position: absolute;
-              top: 0;
-              right: 0;
-            }
-          }
-          &:nth-of-type(3) {
-            text-align: right;
-            top: 184px;
-            left: 64px;
-            transform: translateX(-100%);
-            display: flex;
-            align-items: center;
-            padding-top: 20px;
-            .point {
-              position: absolute;
-              top: 0;
-              right: 20px;
-            }
-          }
-          &:nth-of-type(4) {
-            text-align: right;
-            top: 209px;
-            left: 126px;
-            transform: translateX(-100%);
-            display: flex;
-            align-items: center;
-            padding-top: 20px;
-            .point {
-              position: absolute;
-              top: 0;
-              right: 20px;
-            }
-          }
-          &:nth-of-type(5) {
-            text-align: right;
-            top: 264px;
-            left: 420px;
-            display: flex;
-            align-items: center;
-            padding-top: 20px;
-            transform: translateX(-100%);
-            color: #fde9d5;
-            .point {
-              position: absolute;
-              top: 0;
-              right: 20px;
-            }
-          }
-          &:nth-of-type(6) {
-            text-align: left;
-            top: 270px;
-            left: 270px;
-            transform: translateX(100%);
-            display: flex;
-            align-items: center;
-            padding-top: 20px;
-            color: #fde9d5;
-            .point {
-              position: absolute;
-              top: 0;
-              left: 0;
-            }
-          }
-          &:nth-of-type(7) {
-            text-align: center;
-            top: 271px;
-            left: 1250px;
-            transform: translateX(-100%);
-            display: flex;
-            align-items: center;
-            padding-top: 20px;
-            color: #fbf4de;
-            .point {
-              position: absolute;
-              top: 0;
-              left: 0;
-            }
-          }
-          &:nth-of-type(8) {
-            text-align: center;
-            top: 206px;
-            left: 1585px;
-            transform: translateX(-100%);
-            display: flex;
-            align-items: center;
-            padding-top: 20px;
-            color: #cafad0;
-            .point {
-              position: absolute;
-              top: 0;
-              left: 0;
-            }
-          }
-        }
-      }
-      .img-text-szt {
-        position: absolute;
-        top: 187px;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 179px;
-      }
-    }
-  }
-  .footer {
-    width: 100%;
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    .img {
-      width: 100%;
-    }
-    .map-wrapper {
-      position: absolute;
-      bottom: 86px;
-      left: 403px;
-      z-index: 2;
-      .map-bg {
-        width: 1151px;
-      }
-      .map-text {
-        width: 556px;
-        position: absolute;
-        top: 36px;
-        left: 311px;
-      }
-    }
-    .arrows {
-      width: 1128px;
-      height: 180px;
-      position: absolute;
-      left: 381px;
-      bottom: 159px;
-      z-index: 1;
-      animation: rota2 4s linear infinite;
-      .arrow {
-        width: 82px;
-        position: absolute;
-
-        &:nth-of-type(1) {
-          top: 0;
-          left: 0;
-        }
-        &:nth-of-type(2) {
-          top: 15px;
-          left: 547px;
-        }
-        &:nth-of-type(3) {
-          top: 0;
-          right: 0;
-        }
-      }
-    }
-    .citys {
-      .city {
-        position: absolute;
-        font-size: 24px;
-        line-height: 31px;
-        color: #a6a6a6;
-        cursor: pointer;
-        &.dazhou {
-          top: 146px;
-          left: 108px;
-        }
-        &.yaan {
-          top: 189px;
-          left: 286px;
-        }
-        &.suining {
-          top: 139px;
-          left: 340px;
-        }
-        &.neijiang {
-          top: 183px;
-          left: 460px;
-        }
-        &.zigong {
-          top: 101px;
-          left: 473px;
-        }
-        &.ganzi {
-          top: 259px;
-          left: 538px;
-        }
-        &.chengdu {
-          top: 152px;
-          left: 588px;
-        }
-        &.leshan {
-          top: 196px;
-          left: 732px;
-        }
-        &.luzhou {
-          top: 238px;
-          left: 780px;
-        }
-        &.aba {
-          top: 283px;
-          left: 868px;
-        }
-        &.nanchong {
-          top: 221px;
-          left: 956px;
-        }
-        &.deyang {
-          top: 237px;
-          left: 1088px;
-        }
-        &.meshan {
-          top: 196px;
-          left: 1161px;
-        }
-        &.liangshan {
-          top: 251px;
-          left: 1221px;
-        }
-        &.yibin {
-          top: 176px;
-          left: 1368px;
-        }
-        &.mianyang {
-          top: 196px;
-          left: 1456px;
-        }
-        &.guangan {
-          top: 140px;
-          left: 1527px;
-        }
-        &.bazhong {
-          top: 193px;
-          left: 1575px;
-        }
-        &.guangyuan {
-          top: 107px;
-          left: 1597px;
-        }
-        &.ziyang {
-          top: 178px;
-          left: 1693px;
-        }
-        &.panzhihua {
-          top: 146px;
-          left: 1801px;
-        }
-      }
-    }
   }
 }
