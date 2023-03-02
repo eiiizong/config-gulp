@@ -39,16 +39,26 @@ $rate: 1.7979;
 }
 @keyframes rota2 {
   0% {
-    top: 40px;
+    transform: translateY(-50%);
   }
   50% {
-    top: 0px;
+    transform: translateY(0%);
   }
   100% {
-    top: 40px;
+    transform: translateY(-50%);
   }
 }
-
+@keyframes rota3 {
+  0% {
+    transform: translateY(-20px);
+  }
+  50% {
+    transform: translateY(0%);
+  }
+  100% {
+    transform: translateY(-20px);
+  }
+}
 .header {
   .title {
     text-align: center;
@@ -200,6 +210,7 @@ $rate: 1.7979;
       .line {
         width: 8px;
         position: absolute;
+        animation: rota2 linear 4s infinite;
 
         &:nth-of-type(1) {
           top: 332px;
@@ -231,6 +242,8 @@ $rate: 1.7979;
 
       img {
         width: 240px;
+        animation: rota3 linear 6s infinite;
+
         &:nth-of-type(1) {
           margin-right: 200px;
           margin-left: 348px;
