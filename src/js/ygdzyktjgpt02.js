@@ -23,9 +23,9 @@
         const space = clientHeight - _h
         // console.log('=======', clientHeight, _h, space, space / scaleX)
         // domEl.style.paddingBottom = (scaleY - scaleX) * 1080 + 'px'
-        domEl.style.paddingBottom = `${space / scaleX + 28}px`
+        // domEl.style.paddingBottom = `${space / scaleX + 28}px`
       } else {
-        domEl.style.paddingBottom = `${20}px`
+        // domEl.style.paddingBottom = `${20}px`
       }
     }
 
