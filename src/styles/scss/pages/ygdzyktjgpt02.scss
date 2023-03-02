@@ -1,13 +1,18 @@
+body {
+  background: url(../images/ygdzyktjgpt02/bg.png) no-repeat center center;
+  background-size: cover;
+}
 [v-cloak] {
   display: none;
 }
 .app {
-  width: 100%;
-  min-height: 100%;
+  width: 1920px;
+  height: 1080px;
   overflow: auto;
   position: relative;
   font-size: 16px;
   color: #fff;
+  background-color: transparent;
 }
 @keyframes rota {
   0% {
@@ -28,9 +33,38 @@
     top: 40px;
   }
 }
-.bg {
-  display: block;
+
+.header {
+  .title {
+    text-align: center;
+    color: #fff;
+    font-weight: 700;
+    font-size: 78px;
+    padding-top: 138px;
+    line-height: 1;
+  }
+}
+.footer {
   width: 100%;
+  height: 442px;
+  background: url(../images/ygdzyktjgpt02/bg-footer.png) no-repeat center center;
+  background-size: 2251px 442px;
+  position: relative;
+  .map-wrapper {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 1181px;
+    height: 204px;
+    background: url(../images/ygdzyktjgpt02/bg-map.png) no-repeat center center;
+    background-size: 1181px 204px;
+    text-align: center;
+    font-size: 30px;
+    font-weight: 500;
+    line-height: 1;
+    padding-top: 36px;
+  }
 }
 .main {
   position: absolute;

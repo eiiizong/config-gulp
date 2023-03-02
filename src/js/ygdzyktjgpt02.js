@@ -12,10 +12,10 @@
       if (!domEl) return
       const { clientWidth, clientHeight } = document.documentElement || document.body || {}
       const scaleX = clientWidth / 1920 // 分母是设计稿的宽度
-      // const scaleY = clientHeight / 1080
-      domEl.style.zoom = `scale(${scaleX})`
-      // domEl.style.transformOrigin = 'top left'
-      // const _h = (1080 * clientWidth) / 1920
+      const scaleY = clientHeight / 1080
+      domEl.style.transform = `scale(${scaleX})`
+      domEl.style.transformOrigin = 'top left'
+      const _h = (1080 * clientWidth) / 1920
 
       // 按照宽度的比例缩放后底部会出现空白，再用marginBottom解决这个空白问题 存在问题
       // 实际高度大于缩放后的高度
