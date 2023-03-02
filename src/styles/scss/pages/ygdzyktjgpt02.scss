@@ -76,15 +76,19 @@ $rate: 1.7979;
     }
     .c-01 {
       width: 965px;
+      top: 0;
     }
     .c-02 {
       width: 1113px;
+      top: -50px;
     }
     .c-03 {
       width: 1513px;
+      top: 0;
     }
     .c-04 {
       width: 1601px;
+      top: 0;
     }
   }
   .con {
@@ -123,6 +127,95 @@ $rate: 1.7979;
         top: 150px;
         left: 50%;
         transform: translateX(-50%);
+      }
+    }
+    .items {
+      position: relative;
+      z-index: 3;
+      .item {
+        position: absolute;
+        top: 0;
+        left: 0;
+        cursor: pointer;
+        .text {
+          width: 163px;
+          height: 71px;
+          background: url(../images/ygdzyktjgpt02/icon-button.png) no-repeat center center;
+          background-size: cover;
+          color: #15ffff;
+          font-weight: 700;
+          text-align: center;
+          font-size: calc(50px / $rate);
+          padding-top: 10px;
+        }
+        img {
+          width: 79px;
+          margin: 0 auto;
+        }
+        &:nth-of-type(1) {
+          left: 418px;
+          top: 267px;
+        }
+        &:nth-of-type(2) {
+          left: 874px;
+          top: 316px;
+        }
+        &:nth-of-type(3) {
+          left: 1318px;
+          top: 279px;
+        }
+      }
+    }
+    .texts {
+      width: 100%;
+      position: absolute;
+      z-index: 3;
+      left: 0;
+      top: 0;
+      img {
+        position: absolute;
+        width: 89px;
+        &:nth-of-type(1) {
+          top: 400px;
+          left: 1160px;
+        }
+        &:nth-of-type(2) {
+          top: 404px;
+          left: 720px;
+        }
+        &:nth-of-type(3) {
+          left: 50%;
+          transform: translateX(-50%);
+          top: 560px;
+        }
+      }
+    }
+    .lines {
+      width: 100%;
+      position: absolute;
+      z-index: 3;
+      left: 0;
+      top: 0;
+      .line {
+        width: 8px;
+        position: absolute;
+
+        &:nth-of-type(1) {
+          top: 332px;
+          left: 380px;
+        }
+        &:nth-of-type(2) {
+          top: 400px;
+          left: 680px;
+        }
+        &:nth-of-type(3) {
+          top: 400px;
+          left: 1280px;
+        }
+        &:nth-of-type(4) {
+          top: 310px;
+          left: 1580px;
+        }
       }
     }
   }
