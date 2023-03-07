@@ -17,7 +17,7 @@
     <!-- 控制状态栏显示样式 -->
     <meta name="apple-mobile-web-app-status-bar-style" content="black" />
 
-    <title>四川省以工代赈劳务报酬“一卡通”监管平台</title>
+    <title>Echart Map</title>
 
     <!-- 引入element ui 样式 -->
     <!-- <link rel="stylesheet" href="./lib/element-ui/theme-chalk/index.css" /> -->
@@ -26,181 +26,20 @@
     <link rel="stylesheet" href="./css/index.min.css" />
     <!-- 引入 js 文件 -->
     <script src="./lib/jquery/jquery.min.js"></script>
-    <!-- <script src="./lib/vue/dist/vue.min.js"></script> -->
+    <script src="./lib/echarts/echarts.min.js"></script>
     <!-- <script src="./lib/element-ui/lib/index.js"></script> -->
   </head>
-
-  <body id="body">
-    <div class="app" id="app">
-      <img src="./images/ygdzyktjgpt02/bg-top.png" alt="" class="bg" />
-      <div class="con">
-        <div class="header">
-          <div class="title animate__animated animate__bounceInDown">
-            四川省以工代赈劳务报酬“一卡通”监管平台
-          </div>
-        </div>
-        <div class="center">
-          <div class="bg">
-            <img src="./images/ygdzyktjgpt02/c-01.png" alt="" class="c-01" />
-            <img src="./images/ygdzyktjgpt02/c-02.png" alt="" class="c-02" />
-            <img src="./images/ygdzyktjgpt02/c-03.png" alt="" class="c-03" />
-            <img src="./images/ygdzyktjgpt02/c-04.png" alt="" class="c-04" />
-          </div>
-          <div class="con">
-            <div class="logo-wrapper">
-              <img src="./images/ygdzyktjgpt02/bg-logo.png" alt="" class="logo-bg" />
-              <img src="./images/ygdzyktjgpt02/bg-logo-light.png" alt="" class="logo-light" />
-              <img src="./images/ygdzyktjgpt02/logo.png" alt="" class="logo" />
-              <img src="./images/ygdzyktjgpt02/text-ddzx.png" alt="" class="logo-text" />
-            </div>
-            <div class="items">
-              <div class="item">
-                <div class="text">项目库</div>
-                <img src="./images/ygdzyktjgpt02/icon.png" alt="" />
-              </div>
-              <div class="item">
-                <div class="text">资金库</div>
-                <img src="./images/ygdzyktjgpt02/icon.png" alt="" />
-              </div>
-              <div class="item">
-                <div class="text">人员库</div>
-                <img src="./images/ygdzyktjgpt02/icon.png" alt="" />
-              </div>
-            </div>
-            <div class="texts">
-              <img src="./images/ygdzyktjgpt02/text-sgkl.png" alt="" />
-              <img src="./images/ygdzyktjgpt02/text-sgkr.png" alt="" />
-              <img src="./images/ygdzyktjgpt02/text-sgzt.png" alt="" />
-            </div>
-            <div class="lines">
-              <img src="./images/ygdzyktjgpt02/line-01.png" alt="" class="line" />
-              <img src="./images/ygdzyktjgpt02/line-02.png" alt="" class="line" />
-              <img src="./images/ygdzyktjgpt02/line-02.png" alt="" class="line" />
-              <img src="./images/ygdzyktjgpt02/line-01.png" alt="" class="line" />
-            </div>
-            <div class="arrow-wrapper">
-              <img src="./images/ygdzyktjgpt02//arrow-01.png" alt="" />
-              <img src="./images/ygdzyktjgpt02//arrow-02.png" alt="" />
-              <img src="./images/ygdzyktjgpt02//arrow-01.png" alt="" />
-            </div>
-            <div class="items02">
-              <div class="item02">
-                <div class="col">
-                  <div class="key">项目数量</div>
-                  <div class="value">
-                    <div class="val">233</div>
-                    <div class="unit">个</div>
-                  </div>
-                </div>
-                <div class="wrapper">
-                  <div class="cell">
-                    <div class="key">待建</div>
-                    <div class="value">
-                      <div class="val">56</div>
-                      <div class="ponit"></div>
-                      <div class="unit">个</div>
-                    </div>
-                  </div>
-                  <div class="cell">
-                    <div class="key">在建</div>
-                    <div class="value">
-                      <div class="val">56</div>
-                      <div class="ponit"></div>
-                      <div class="unit">个</div>
-                    </div>
-                  </div>
-                  <div class="cell">
-                    <div class="key">暂停</div>
-                    <div class="value">
-                      <div class="val">56</div>
-                      <div class="ponit"></div>
-                      <div class="unit">个</div>
-                    </div>
-                  </div>
-                  <div class="cell">
-                    <div class="key">竣工</div>
-                    <div class="value">
-                      <div class="val">56</div>
-                      <div class="ponit"></div>
-                      <div class="unit">个</div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="item02">
-                <div class="col">
-                  <div class="key">项目投资</div>
-                  <div class="value">
-                    <div class="val">2339987</div>
-                    <div class="point">.22</div>
-                    <div class="unit">万元</div>
-                  </div>
-                </div>
-                <div class="wrapper">
-                  <div class="cell w100">
-                    <div class="key">中省投资</div>
-                    <div class="value">
-                      <div class="val">56999</div>
-                      <div class="unit">万元</div>
-                    </div>
-                  </div>
-
-                  <div class="cell w100">
-                    <div class="key">其他投资</div>
-                    <div class="value">
-                      <div class="val">56999</div>
-                      <div class="unit">万元</div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="item02">
-                <div class="col">
-                  <div class="key">已发放劳务报酬</div>
-                  <div class="value">
-                    <div class="val">2339987</div>
-                    <div class="point">.22</div>
-                    <div class="unit">万元</div>
-                  </div>
-                </div>
-                <div class="wrapper">
-                  <div class="cell w100">
-                    <div class="key">预计发放金额</div>
-                    <div class="value">
-                      <div class="val">56999</div>
-                      <div class="unit">万元</div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="item02">
-                <div class="col">
-                  <div class="key">已带动务工人员</div>
-                  <div class="value">
-                    <div class="val">2339987</div>
-                    <div class="unit">人</div>
-                  </div>
-                </div>
-                <div class="wrapper">
-                  <div class="cell w100">
-                    <div class="key">预计带动人数</div>
-                    <div class="value">
-                      <div class="val">56999</div>
-                      <div class="unit">人</div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="footer animate__animated animate__bounceInUp">
-          <div class="map-wrapper">21市州以工代赈审批发放平台</div>
-        </div>
-      </div>
+  <style>
+    .echart-wrapper {
+      margin: 20px auto;
+      background-color: #0c0f58;
+    }
+  </style>
+  <body>
+    <div class="echart-wrapper" style="width: 910px; height: 580px">
+      <div class="echart" id="echart_map" style="width: 100%; height: 100%"></div>
     </div>
   </body>
 
-  <script src="./js/ygdzyktjgpt02.js"></script>
+  <script src="./js/echart-map.js"></script>
 </html>
