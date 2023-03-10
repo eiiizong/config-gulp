@@ -129,6 +129,13 @@ $rate: 1.7979;
       transform: translateX(-50%);
       z-index: 4;
     }
+    .bg-active {
+      width: 371px;
+      left: -64px;
+      top: 10px;
+      z-index: 5;
+      transform: rotate(327deg);
+    }
   }
   .w-right {
     width: 302px;
